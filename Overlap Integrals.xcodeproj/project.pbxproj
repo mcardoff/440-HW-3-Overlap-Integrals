@@ -17,6 +17,12 @@
 		2CC34BD827BDDD50002B2B2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */; };
 		2CC34BD927BDDD50002B2B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */; };
 		2CC34BDA27BDDD50002B2B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */; };
+		2CC34BEA27BDDF09002B2B2C /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */; };
+		2CC34BEB27BDDF09002B2B2C /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */; };
+		2CC34BF327BDF72E002B2B2C /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */; };
+		2CC34BF427BDF72E002B2B2C /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */; };
+		2CC34BF627BDF747002B2B2C /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF527BDF747002B2B2C /* BoundingBox.swift */; };
+		2CC34BF727BDF747002B2B2C /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF527BDF747002B2B2C /* BoundingBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 		2CC34BCD27BDDD50002B2B2C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC34BD127BDDD50002B2B2C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2CC34BD327BDDD50002B2B2C /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wavefunctions.swift; sourceTree = "<group>"; };
+		2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarlo.swift; sourceTree = "<group>"; };
+		2CC34BF527BDF747002B2B2C /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,9 @@
 			children = (
 				2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegrapsApp.swift */,
 				2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */,
+				2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */,
+				2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */,
+				2CC34BF527BDF747002B2B2C /* BoundingBox.swift */,
 				2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -299,8 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC34BF627BDF747002B2B2C /* BoundingBox.swift in Sources */,
+				2CC34BEA27BDDF09002B2B2C /* Wavefunctions.swift in Sources */,
 				2CC34BD727BDDD50002B2B2C /* ContentView.swift in Sources */,
 				2CC34BD527BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */,
+				2CC34BF327BDF72E002B2B2C /* MonteCarlo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +323,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC34BF727BDF747002B2B2C /* BoundingBox.swift in Sources */,
+				2CC34BEB27BDDF09002B2B2C /* Wavefunctions.swift in Sources */,
 				2CC34BD827BDDD50002B2B2C /* ContentView.swift in Sources */,
 				2CC34BD627BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */,
+				2CC34BF427BDF72E002B2B2C /* MonteCarlo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
