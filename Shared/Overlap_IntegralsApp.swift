@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Overlap_IntegrapsApp: App {
+struct Overlap_IntegralsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -11,8 +11,8 @@
 		2CC34BC827BDDD50002B2B2C /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BC727BDDD50002B2B2C /* Tests_iOSLaunchTests.swift */; };
 		2CC34BD227BDDD50002B2B2C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BD127BDDD50002B2B2C /* Tests_macOS.swift */; };
 		2CC34BD427BDDD50002B2B2C /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BD327BDDD50002B2B2C /* Tests_macOSLaunchTests.swift */; };
-		2CC34BD527BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegrapsApp.swift */; };
-		2CC34BD627BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegrapsApp.swift */; };
+		2CC34BD527BDDD50002B2B2C /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */; };
+		2CC34BD627BDDD50002B2B2C /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */; };
 		2CC34BD727BDDD50002B2B2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */; };
 		2CC34BD827BDDD50002B2B2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */; };
 		2CC34BD927BDDD50002B2B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */; };
@@ -43,10 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegrapsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlap_IntegrapsApp.swift; sourceTree = "<group>"; };
+		2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlap_IntegralsApp.swift; sourceTree = "<group>"; };
 		2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2CC34BB427BDDD50002B2B2C /* Overlap Integraps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overlap Integraps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC34BB427BDDD50002B2B2C /* Overlap Integrals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overlap Integrals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC34BBA27BDDD50002B2B2C /* Overlap Integraps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overlap Integraps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC34BBC27BDDD50002B2B2C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		2CC34BC127BDDD50002B2B2C /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 		2CC34BAC27BDDD4D002B2B2C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegrapsApp.swift */,
+				2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */,
 				2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */,
 				2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */,
 				2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */,
@@ -119,7 +119,7 @@
 		2CC34BB527BDDD50002B2B2C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CC34BB427BDDD50002B2B2C /* Overlap Integraps.app */,
+				2CC34BB427BDDD50002B2B2C /* Overlap Integrals.app */,
 				2CC34BBA27BDDD50002B2B2C /* Overlap Integraps.app */,
 				2CC34BC127BDDD50002B2B2C /* Tests iOS.xctest */,
 				2CC34BCD27BDDD50002B2B2C /* Tests macOS.xctest */,
@@ -170,7 +170,7 @@
 			);
 			name = "Overlap Integraps (iOS)";
 			productName = "Overlap Integraps (iOS)";
-			productReference = 2CC34BB427BDDD50002B2B2C /* Overlap Integraps.app */;
+			productReference = 2CC34BB427BDDD50002B2B2C /* Overlap Integrals.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2CC34BB927BDDD50002B2B2C /* Overlap Integraps (macOS) */ = {
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integraps" */;
+			buildConfigurationList = 2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integrals" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -314,7 +314,7 @@
 				2CC34BF627BDF747002B2B2C /* BoundingBox.swift in Sources */,
 				2CC34BEA27BDDF09002B2B2C /* Wavefunctions.swift in Sources */,
 				2CC34BD727BDDD50002B2B2C /* ContentView.swift in Sources */,
-				2CC34BD527BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */,
+				2CC34BD527BDDD50002B2B2C /* Overlap_IntegralsApp.swift in Sources */,
 				2CC34BF327BDF72E002B2B2C /* MonteCarlo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +326,7 @@
 				2CC34BF727BDF747002B2B2C /* BoundingBox.swift in Sources */,
 				2CC34BEB27BDDF09002B2B2C /* Wavefunctions.swift in Sources */,
 				2CC34BD827BDDD50002B2B2C /* ContentView.swift in Sources */,
-				2CC34BD627BDDD50002B2B2C /* Overlap_IntegrapsApp.swift in Sources */,
+				2CC34BD627BDDD50002B2B2C /* Overlap_IntegralsApp.swift in Sources */,
 				2CC34BF427BDF72E002B2B2C /* MonteCarlo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,8 +497,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integraps";
-				PRODUCT_NAME = "Overlap Integraps";
+				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
+				PRODUCT_NAME = "Overlap Integrals";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -527,8 +527,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integraps";
-				PRODUCT_NAME = "Overlap Integraps";
+				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
+				PRODUCT_NAME = "Overlap Integrals";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -675,7 +675,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integraps" */ = {
+		2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integrals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BDB27BDDD50002B2B2C /* Debug */,
