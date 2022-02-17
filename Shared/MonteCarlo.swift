@@ -17,8 +17,7 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
-                             xMin: Double, yMin: Double, zMin: Double,
-                             xMax: Double, yMax: Double, zMax: Double,
+                             xMin: Double, yMin: Double, zMin: Double, xMax: Double, yMax: Double, zMax: Double,
                              n: Int, spacing: Double ) {
         var LHV = 0.0, RHV = 0.0
         var funVals : [Double] = []
@@ -36,6 +35,7 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         }
         
         // silly little test
+        assert(funVals.count == n)
         
         let vol = BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
         let avg = calculateAverage(data: funVals)
@@ -56,7 +56,6 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         for num in data {
             sum += num
         }
-        
         let avg = sum / Double(nPts)
         return avg
     }

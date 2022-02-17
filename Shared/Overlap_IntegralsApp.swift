@@ -12,6 +12,7 @@ struct Overlap_IntegralsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .frame(width: 500, height: 800)
         }
     }
 }

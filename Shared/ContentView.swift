@@ -10,22 +10,117 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var monteCarlo = MonteCarloCalculator()
+    @State var nString = "10000"
+    @State var xMinString = "-5.0"
+    @State var yMinString = "-5.0"
+    @State var zMinString = "-5.0"
+    @State var xMaxString = "5.0"
+    @State var yMaxString = "5.0"
+    @State var zMaxString = "5.0"
+    @State var spacingString = "0.0"
+    @State var leftFuncString = ""
+    @State var rightFuncString = ""
+    var orbitals = ["1s", "2px"]
     
     var body: some View {
         VStack {
-            Text("Bruh Moment")
-            TextField("Integral Value", text: $monteCarlo.integralString)
+            VStack {
+                Text("Number of Points")
+                TextField("Make it big!", text: $nString, onCommit: self.calculate)
+                    .frame(width: 100)
+            }.padding()
+            
+            VStack {
+                Text("X Limits")
+                HStack {
+                    // x dims
+                    TextField("X Min", text: $xMinString)
+                        .frame(width: 75)
+                    TextField("X Max", text: $xMaxString)
+                        .frame(width: 75)
+                }
+                
+                Text("Y Limits")
+                HStack {
+                    // y dims
+                    TextField("Y Min", text: $yMinString)
+                        .frame(width: 75)
+                    TextField("Y Max", text: $yMaxString)
+                        .frame(width: 75)
+                }
+                
+                Text("Z Limits")
+                HStack {
+                    // z dims
+                    TextField("Z Min", text: $zMinString)
+                        .frame(width: 75)
+                    TextField("Z Max", text: $zMaxString)
+                        .frame(width: 75)
+                }
+            }.padding()
+            
+            VStack {
+                Text("Interatmoic Spacing")
+                TextField("R", text: $spacingString)
+                    .frame(width: 100)
+            }.padding()
+            
+            VStack {
+                Text("Choose Left Wavefunc")
+                Picker("", selection: $leftFuncString) {
+                    ForEach(orbitals, id: \.self) {
+                        Text($0)
+                    }
+                }.frame(width: 100)
+            }.padding()
+            
+            VStack {
+                Text("Choose Right Wavefunc")
+                Picker("", selection: $rightFuncString) {
+                    ForEach(orbitals, id: \.self) {
+                        Text($0)
+                    }
+                }.frame(width: 100)
+            }.padding()
+            
+            VStack {
+                Text("Integral Value")
+                TextField("Integral Value", text: $monteCarlo.integralString)
+                    .frame(width: 100)
+            }.padding()
+            
+            Button("Bruh", action: self.calculate)
                 .padding()
                 .frame(width: 100)
         }
-        Button("Bruh", action: self.calculate)
-            .padding()
-            .frame(width: 100)
     }
     
     func calculate() {
-        let boxSide = 2.0 // small for now
-        monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: -boxSide, yMin: -boxSide, zMin: -boxSide, xMax: boxSide, yMax: boxSide, zMax: boxSide, n: 100000, spacing: 0)
+//        let boxSide = 5.0 // small for now
+        // trusting the user for now
+        let xMin = Double(xMinString)!, yMin = Double(yMinString)!, zMin = Double(zMinString)!,
+            xMax = Double(xMaxString)!, yMax = Double(yMaxString)!, zMax = Double(zMaxString)!
+        let spacing = Double(spacingString)!
+        var func1 = psi1s, func2 = psi1s
+        
+        // left func
+        if (leftFuncString.elementsEqual("2px")) {
+            func1 = psi2px
+        } else {
+            func1 = psi1s
+        }
+        
+        // right func
+        if (rightFuncString.elementsEqual("2px")) {
+            func2 = psi2px
+        } else {
+            func2 = psi1s
+        }
+        
+        monteCarlo.monteCarloIntegrate(
+            leftwavefunction: func1, rightwavefunction: func2,
+            xMin: xMin, yMin: yMin, zMin: zMin, xMax: xMax, yMax: yMax, zMax: zMax,
+            n: Int(nString)!, spacing: spacing)
     }
 }
 
