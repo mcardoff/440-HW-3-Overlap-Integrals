@@ -12,15 +12,20 @@ struct ContentView: View {
     @ObservedObject var monteCarlo = MonteCarloCalculator()
     
     var body: some View {
-//        Text("Hello, world!")
-//            .padding()
+        VStack {
+            Text("Bruh Moment")
+            TextField("Integral Value", text: $monteCarlo.integralString)
+                .padding()
+                .frame(width: 100)
+        }
         Button("Bruh", action: self.calculate)
             .padding()
             .frame(width: 100)
     }
     
     func calculate() {
-        monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: -10, yMin: -10, zMin: -10, xMax: 10, yMax: 10, zMax: 10, n: 10, spacing: 0)
+        let boxSide = 2.0 // small for now
+        monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: -boxSide, yMin: -boxSide, zMin: -boxSide, xMax: boxSide, yMax: boxSide, zMax: boxSide, n: 100000, spacing: 0)
     }
 }
 

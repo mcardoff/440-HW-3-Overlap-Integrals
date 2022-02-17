@@ -1,5 +1,5 @@
 //
-//  Overlap_IntegrapsApp.swift
+//  Overlap_IntegralsApp.swift
 //  Shared
 //
 //  Created by Michael Cardiff on 2/16/22.
