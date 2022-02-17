@@ -18,15 +18,15 @@ class BoundingBox: NSObject {
     ///   - lengthOfSide2: length of the second side
     ///   - lengthOfSide3: length of the third side
     /// - Returns: returns the volume of a box
-    func calculateVolume(lengthOfSide1: Double, lengthOfSide2: Double, lengthOfSide3: Double) -> Double {
+    static func calculateVolume(lengthOfSide1: Double, lengthOfSide2: Double, lengthOfSide3: Double) -> Double {
         return (lengthOfSide1*lengthOfSide2*lengthOfSide3)
     }
     
-    func volumeFromCoords(x1: Double, x2: Double, y1: Double, y2: Double, z1: Double, z2: Double) -> Double {
+    static func volumeFromCoords(x1: Double, x2: Double, y1: Double, y2: Double, z1: Double, z2: Double) -> Double {
         let lenX = max(x1,x2)-min(x1,x2)
         let lenY = max(y1,y2)-min(y1,y2)
         let lenZ = max(z1,z2)-min(z1,z2)
-        return calculateVolume(lengthOfSide1: lenX, lengthOfSide2: lenY, lengthOfSide3: lenZ)
+        return BoundingBox.calculateVolume(lengthOfSide1: lenX, lengthOfSide2: lenY, lengthOfSide3: lenZ)
     }
     
     /// calculateSurfaceArea
