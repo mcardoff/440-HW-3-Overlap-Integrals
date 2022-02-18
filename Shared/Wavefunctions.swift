@@ -9,14 +9,14 @@ import SwiftUI
 
 func psi1s(x: Double, y: Double, z: Double) -> Double {
     let r = sqrt(x*x + y*y + z*z)
-    let phi = convertPhi(x: x, y: y, z: z)//atan(y/x)
+    let phi = convertPhi(x: x, y: y, z: z)
     let theta = acos(z/r)
     return psi1sSph(r: r, theta: theta, phi: phi)
 }
 
 func psi2px(x: Double, y: Double, z: Double) -> Double {
     let r = sqrt(x*x + y*y + z*z)
-    let phi = convertPhi(x: x, y: y, z: z)//atan(y/x)
+    let phi = convertPhi(x: x, y: y, z: z)
     let theta = acos(z/r)
     return psi2pxSph(r: r, theta: theta, phi: phi)
 }

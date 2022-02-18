@@ -563,7 +563,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integraps";
+				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
 				PRODUCT_NAME = "Overlap Integraps";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -591,7 +591,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integraps";
+				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
 				PRODUCT_NAME = "Overlap Integraps";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;

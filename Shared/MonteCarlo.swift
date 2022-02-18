@@ -18,6 +18,7 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     @Published var integralString = "" // value of calculated integral but a string :)
     @Published var redPoints : [CoordTuple] = []
     @Published var bluPoints : [CoordTuple] = []
+//    @Published var normalized = false
     
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
@@ -48,6 +49,10 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         // silly little test
         assert(funVals.count == n)
+//        if !normalized {
+//            normalizePts() // adjusts red/blue to be between 0,1
+//            normalized = true
+//        }
         
         let vol = BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
         let avg = calculateAverage(data: funVals)
@@ -70,6 +75,44 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         }
         let avg = sum / Double(nPts)
         return avg
+    }
+    
+    
+    // used temporarily to attempt to get a good looking plot, but I realized that kind of was the wrong idea
+    func normalizePts() {
+        var maxX : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+        var maxY : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+        var newRedList : [CoordTuple] = []
+        var newBluList : [CoordTuple] = []
+        let combinedList = redPoints + bluPoints
+        
+        for tup in combinedList { // finds max of entire thing
+            // maxes
+            if tup.x > maxX {
+                maxX = tup.x
+            }
+            
+            if tup.y > maxY {
+                maxY = tup.y
+            }
+        }
+        
+        let globalMax = max(maxX, maxY)
+        // found maximum and minimum x and y, now we can reduce to a max of 1
+        for tup in redPoints {
+            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
+            newRedList.append(newTup)
+        }
+        
+        for tup in bluPoints {
+            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
+            newBluList.append(newTup)
+        }
+        
+        redPoints = newRedList
+        bluPoints = newBluList
+        
+        
     }
     
     func clearData() {

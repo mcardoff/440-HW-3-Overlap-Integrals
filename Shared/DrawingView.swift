@@ -36,9 +36,8 @@ struct drawIntegral: Shape {
     func path(in rect: CGRect) -> Path {
         // draw from the center of our rectangle
         
-        //normalizePts()
         let center = CGPoint(x: 0, y: rect.height)
-        let scale = rect.width/10
+        let scale = 1
         
         // Create the Path for the display
         var path = Path()
@@ -49,15 +48,5 @@ struct drawIntegral: Shape {
                 width: 1.0 , height: 1.0))
         }
         return (path)
-    }
-    
-    func normalizePts() {
-        var maxX : Double = -Double.greatestFiniteMagnitude // effectively -infinity
-        var maxY : Double = -Double.greatestFiniteMagnitude // effectively -infinity
-        for tup in drawingPoints {
-            if tup.x > maxX {
-                maxX = tup.x
-            }
-        }
     }
 }
