@@ -1,8 +1,21 @@
 //
 //  PlotClass.swift
-//  Overlap Integrals
+//  Test Plot
 //
-//  Created by Michael Cardiff on 2/18/22.
+//  Created by Jeff Terry on 1/25/21.
 //
 
 import Foundation
+
+class PlotClass: ObservableObject {
+    
+    @Published var plotArray: [PlotDataClass]
+    
+    @MainActor init() {
+        self.plotArray = [PlotDataClass.init(fromLine: true)]
+        self.plotArray.append(contentsOf: [PlotDataClass.init(fromLine: true)])
+            
+        }
+
+    
+}

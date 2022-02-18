@@ -101,15 +101,6 @@ struct ContentView: View {
                     .frame(width: 150)
                     .disabled(monteCarlo.enableButton == false)
                 
-                Button("Spacing", action: {
-                    Task.init {
-                        await self.calculateAsFuncOfR()
-                    }
-                })
-                    .padding()
-                    .frame(width: 150)
-                    .disabled(monteCarlo.enableButton == false)
-                
                 Button("Clear", action: self.clear)
                     .padding()
                     .frame(width: 100)
@@ -119,23 +110,15 @@ struct ContentView: View {
                 }
                 
             }
-            TabView {
-                // DrawingField
-                drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
-                    .padding()
-                    .aspectRatio(1, contentMode: .fit)
-                    .drawingGroup()
-                    .tabItem {
-                        Text("Orbital Plot")
-                    }
-                drawingView(redLayer: $plotpts, blueLayer: $empty)
-                    .padding()
-                    .aspectRatio(1, contentMode: .fit)
-                    .drawingGroup()
-                    .tabItem {
-                        Text("vs R Plot")
-                    }
-            }
+            // DrawingField
+            drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
+                .padding()
+                .aspectRatio(1, contentMode: .fit)
+                .drawingGroup()
+                .tabItem {
+                    Text("Orbital Plot")
+                }
+            
             // Stop the window shrinking to zero.
             Spacer()
         }
@@ -179,37 +162,37 @@ struct ContentView: View {
         
     }
     
-    func calculateAsFuncOfR() async {
-        let newMonte = MonteCarloCalculator()
-        self.clear()
-        monteCarlo.setButtonEnable(state: false)
-        newMonte.setButtonEnable(state: false)
-        // fix bounds of -10,10 for each dim
-        let boxDim = 10.0, n = 100000
-        var newPlotPts : [CoordTuple] = []
-        let range = stride(from: 0.0, to: 10, by: 0.1)
-        for r in range {
-            await newMonte.monteCarloIntegrate(
-                leftwavefunction: psi1s, rightwavefunction: psi1s,
-                xMin: -boxDim, yMin: -boxDim, zMin: -boxDim, xMax: boxDim, yMax: boxDim, zMax: boxDim,
-                n: n, spacing: r)
-            let tup = (x: r, y: newMonte.integral)
-            newPlotPts.append(tup)
-        }
-        
-//        for item in newPlotPts {
-//            print("pt: \(item.x), \(item.y)")
+//    func calculateAsFuncOfR() async {
+//        let newMonte = MonteCarloCalculator()
+//        self.clear()
+//        monteCarlo.setButtonEnable(state: false)
+//        newMonte.setButtonEnable(state: false)
+//        // fix bounds of -10,10 for each dim
+//        let boxDim = 10.0, n = 100000
+//        var newPlotPts : [CoordTuple] = []
+//        let range = stride(from: 0.0, to: 10, by: 0.1)
+//        for r in range {
+//            await newMonte.monteCarloIntegrate(
+//                leftwavefunction: psi1s, rightwavefunction: psi1s,
+//                xMin: -boxDim, yMin: -boxDim, zMin: -boxDim, xMax: boxDim, yMax: boxDim, zMax: boxDim,
+//                n: n, spacing: r)
+//            let tup = (x: r, y: newMonte.integral)
+//            newPlotPts.append(tup)
 //        }
-        
-        await updatePlotPts(content: newPlotPts)
-        
-        monteCarlo.setButtonEnable(state: true)
-        newMonte.setButtonEnable(state: true)
-    }
+//
+////        for item in newPlotPts {
+////            print("pt: \(item.x), \(item.y)")
+////        }
+//
+//        await updatePlotPts(content: newPlotPts)
+//
+//        monteCarlo.setButtonEnable(state: true)
+//        newMonte.setButtonEnable(state: true)
+//    }
     
-    @MainActor func updatePlotPts(content: [CoordTuple]) async {
-        plotpts.append(contentsOf: content)
-    }
+//    @MainActor func updatePlotPts(content: [CoordTuple]) async {
+//        plotpts.append(contentsOf: content)
+//    }
     
     func clear() {
         monteCarlo.clearData()

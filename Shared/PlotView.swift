@@ -10,19 +10,18 @@ import CorePlot
 
 typealias plotDataType = [CPTScatterPlotField : Double]
 
-struct ContentView: View {
+struct PlotView: View {
     @EnvironmentObject var plotData :PlotClass
     
     @ObservedObject private var calculator = CalculatePlotData()
     @State var isChecked:Bool = false
     @State var tempInput = ""
-    
     @State var selector = 0
-
+    
     var body: some View {
         
         VStack{
-      
+            
             CorePlot(dataForPlot: $plotData.plotArray[selector].plotData, changingPlotParameters: $plotData.plotArray[selector].changingPlotParameters)
                 .setPlotPadding(left: 10)
                 .setPlotPadding(right: 10)
@@ -31,177 +30,92 @@ struct ContentView: View {
                 .padding()
             
             Divider()
-            /*
-                     CorePlot(dataForPlot: $plotData.plotArray[0].plotData, changingPlotParameters: $plotData.plotArray[0].changingPlotParameters)
-                         .setPlotPadding(left: 10)
-                         .setPlotPadding(right: 10)
-                         .setPlotPadding(top: 10)
-                         .setPlotPadding(bottom: 10)
-                         .padding()
-                     
-                     Divider()
-                     */
-   /*
-            CorePlot(dataForPlot: $plotData.plotArray[1].plotData, changingPlotParameters: $plotData.plotArray[1].changingPlotParameters)
-                .setPlotPadding(left: 10)
-                .setPlotPadding(right: 10)
-                .setPlotPadding(top: 10)
-                .setPlotPadding(bottom: 10)
-                .padding()
-            
-            Divider()
-            */
-            HStack{
-                
-                HStack(alignment: .center) {
-                    Text("temp:")
-                        .font(.callout)
-                        .bold()
-                    TextField("temp", text: $tempInput)
-                        .padding()
-                }.padding()
-                
-                Toggle(isOn: $isChecked) {
-                            Text("Display Error")
-                        }
-                .padding()
-                
-                
-            }
-            
             
             HStack{
-                Button("exp(-x)", action: {
-                    
+                Button("1s 1s", action: {
                     Task.init{
-                    
-                    self.selector = 0
-                    await self.calculate()
+                        self.selector = 0
+                        await self.calculateVsR(psil: "1s", psir: "1s")
                     }
-                    
-                    
-                    
-                }
+                }).padding()
                 
+                Button("1s 2px", action: {
+                    Task.init{
+                        self.selector = 0
+                        await self.calculateVsR(psil: "1s", psir: "2px")
+                    }
+                }).padding()
                 
-                )
-                .padding()
-                
+                Button("2px 2px", action: {
+                    Task.init{
+                        self.selector = 0
+                        await self.calculateVsR(psil: "2px", psir: "2px")
+                    }
+                }).padding()
             }
-            
-            HStack{
-                Button("x", action: { Task.init{
-                    
-                    self.selector = 1
-                    
-                    await self.calculate2()
-                    
-                    
-                }
-                }
-                
-                
-                )
-                .padding()
-                
-            }
-            
         }
-        
     }
     
     @MainActor func setupPlotDataModel(selector: Int){
-        
         calculator.plotDataModel = self.plotData.plotArray[selector]
+    }
+    
+    func calculateVsR(psil: String, psir: String) async {
+        setupPlotDataModel(selector: 0)
+        let _ = await withTaskGroup(of:  Void.self) { taskGroup in
+            taskGroup.addTask {
+//                var temp = 0.0
+                //Calculate the new plotting data and place in the plotDataModel
+                if psir == "1s" {
+                    if psil == "2px" {
+                        await calculator.plotOverlapVsR(psil: psi2px, psir: psi1s)
+                    } else {
+                        await calculator.plotOverlapVsR(psil: psi1s, psir: psi1s)
+                    }
+                } else if psir == "2px" {
+                    if psil == "2px" {
+                        await calculator.plotOverlapVsR(psil: psi2px, psir: psi2px)
+                    } else {
+                        await calculator.plotOverlapVsR(psil: psi1s, psir: psi2px)
+                    }
+                }
+                
+                // This forces a SwiftUI update. Force a SwiftUI update.
+                await self.plotData.objectWillChange.send()
+            }
+        }
     }
     
     
     /// calculate
     /// Function accepts the command to start the calculation from the GUI
     func calculate() async {
-        
-        //pass the plotDataModel to the Calculator
-       // calculator.plotDataModel = self.plotData.plotArray[0]
-        
         setupPlotDataModel(selector: 0)
-        
-     //   Task{
-            
-            
-            let _ = await withTaskGroup(of:  Void.self) { taskGroup in
-
-
-
-                taskGroup.addTask {
-
-        
-        var temp = 0.0
-        
-        
-        
-        //Calculate the new plotting data and place in the plotDataModel
-        await calculator.ploteToTheMinusX()
-        
-                    // This forces a SwiftUI update. Force a SwiftUI update.
-        await self.plotData.objectWillChange.send()
-                    
-                }
-
+        let _ = await withTaskGroup(of:  Void.self) { taskGroup in
+            taskGroup.addTask {
+//                var temp = 0.0
+                //Calculate the new plotting data and place in the plotDataModel
+                await calculator.ploteToTheMinusX()
                 
+                // This forces a SwiftUI update. Force a SwiftUI update.
+                await self.plotData.objectWillChange.send()
             }
-            
-  //      }
-        
-        
+        }
     }
     
     /// calculate
     /// Function accepts the command to start the calculation from the GUI
     func calculate2() async {
-        
-        
-        //pass the plotDataModel to the Calculator
-       // calculator.plotDataModel = self.plotData.plotArray[0]
-        
         setupPlotDataModel(selector: 1)
-        
-     //   Task{
-            
-            
-            let _ = await withTaskGroup(of:  Void.self) { taskGroup in
-
-
-
-                taskGroup.addTask {
-
-        
-        var temp = 0.0
-        
-        
-        
-        //Calculate the new plotting data and place in the plotDataModel
-        await calculator.plotYEqualsX()
-                  
-                    // This forces a SwiftUI update. Force a SwiftUI update.
-        await self.plotData.objectWillChange.send()
-                    
-                }
+        let _ = await withTaskGroup(of:  Void.self) { taskGroup in
+            taskGroup.addTask {
+//                var temp = 0.0
+                //Calculate the new plotting data and place in the plotDataModel
+                await calculator.plotYEqualsX()
                 
+                // This forces a SwiftUI update. Force a SwiftUI update.
+                await self.plotData.objectWillChange.send()
             }
-            
-    //    }
-        
-        
-
-    }
-    
-
-   
-    
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        }
     }
 }

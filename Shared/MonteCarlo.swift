@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 // use the average value theorem to compute the value of the overlap integral of two wavefunctions
 
 typealias CoordTuple = (x: Double, y: Double)
@@ -18,6 +19,7 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     @Published var integralString = "" // value of calculated integral but a string :)
     @Published var redPoints : [CoordTuple] = []
     @Published var bluPoints : [CoordTuple] = []
+    @Published var plotPoints : [plotDataType] = []
     @Published var enableButton = true
     //    @Published var normalized = false
     
@@ -72,10 +74,6 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         // silly little test
         assert(funVals.count == n)
-//        if !normalized {
-//            normalizePts() // adjusts red/blue to be between 0,1
-//            normalized = true
-//        }
         
         let vol = await BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
         let avg = await calculateAverage(data: funVals)
@@ -84,6 +82,30 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         await updateIntegralString(text: String(self.integral))
     }
     
+//    func calculateAsFuncOfR() async {
+//        await self.setButtonEnable(state: false)
+//        // fix bounds of -10,10 for each dim
+//        let boxDim = 10.0, n = 100000
+//        var newPlotPts : [plotDataType] = []
+//        let range = stride(from: 0.0, to: 10, by: 0.1)
+//        for r in range {
+//            await self.monteCarloIntegrate(
+//                leftwavefunction: psi1s, rightwavefunction: psi1s,
+//                xMin: -boxDim, yMin: -boxDim, zMin: -boxDim, xMax: boxDim, yMax: boxDim, zMax: boxDim,
+//                n: n, spacing: r)
+//            let tup : plotDataType = [.X: r, .Y: self.integral]
+//            newPlotPts.append(tup)
+//        }
+//
+// //        for item in newPlotPts {
+// //            print("pt: \(item.x), \(item.y)")
+// //        }
+//
+//        await updatePlotPts(content: newPlotPts)
+//
+//        await self.setButtonEnable(state: true)
+//    }
+    
     /// updatePoints
     ///
     /// Updates class variables from main thread
@@ -91,6 +113,13 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     @MainActor func updatePoints(blu: [CoordTuple], red: [CoordTuple]) {
         bluPoints.append(contentsOf: blu)
         redPoints.append(contentsOf: red)
+    }
+    
+    @MainActor func updatePlotPts(content: [plotDataType]) async {
+        plotPoints.append(contentsOf: content)
+        for item in plotPoints {
+            print(item)
+        }
     }
     
     /// updateIntegral
