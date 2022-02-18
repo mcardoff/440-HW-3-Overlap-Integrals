@@ -27,7 +27,7 @@ struct ContentView: View {
             VStack {
                 VStack {
                     Text("Number of Points")
-                    TextField("Make it big!", text: $nString, onCommit: self.calculate)
+                    TextField("Make it big!", text: $nString, onCommit: {Task.init{await self.calculate()}})
                         .frame(width: 100)
                 }.padding()
                 
@@ -90,7 +90,7 @@ struct ContentView: View {
                         .frame(width: 100)
                 }.padding()
                 
-                Button("Integrate", action: self.calculate)
+                Button("Integrate", action: {Task.init{await self.calculate()}})
                     .padding()
                     .frame(width: 150)
                     .disabled(monteCarlo.enableButton == false)
@@ -109,12 +109,15 @@ struct ContentView: View {
         }
     }
     
-    func calculate() {
-        //        let boxSide = 5.0 // small for now
-        // trusting the user for now
+    func calculate() async {
+        self.clear() // clear before you do dumb stuff
+        monteCarlo.setButtonEnable(state: false)
+        
         let xMin = Double(xMinString)!, yMin = Double(yMinString)!, zMin = Double(zMinString)!,
             xMax = Double(xMaxString)!, yMax = Double(yMaxString)!, zMax = Double(zMaxString)!
+        
         let spacing = Double(spacingString)!
+        
         var func1 = psi1s, func2 = psi1s
         
         // left func
@@ -135,10 +138,13 @@ struct ContentView: View {
             print("Changed right func to 1s!")
         }
         
-        monteCarlo.monteCarloIntegrate(
+        await monteCarlo.monteCarloIntegrate(
             leftwavefunction: func1, rightwavefunction: func2,
             xMin: xMin, yMin: yMin, zMin: zMin, xMax: xMax, yMax: yMax, zMax: zMax,
             n: Int(nString)!, spacing: spacing)
+        
+        monteCarlo.setButtonEnable(state: true)
+        
     }
     
     func clear() {
