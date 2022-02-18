@@ -123,19 +123,19 @@ struct ContentView: View {
         // left func
         if (leftFuncString == "2px") {
             func1 = psi2px
-            print("Changed left func to 2px!")
+//            print("Changed left func to 2px!")
         } else {
             func1 = psi1s
-            print("Changed left func to 1s")
+//            print("Changed left func to 1s")
         }
         
         // right func
         if (rightFuncString == "2px") {
             func2 = psi2px
-            print("Changed right func to 2px!")
+//            print("Changed right func to 2px!")
         } else {
             func2 = psi1s
-            print("Changed right func to 1s!")
+//            print("Changed right func to 1s!")
         }
         
         await monteCarlo.monteCarloIntegrate(
@@ -145,6 +145,24 @@ struct ContentView: View {
         
         monteCarlo.setButtonEnable(state: true)
         
+    }
+    
+    func calculateAsFuncOfR() async {
+        let newMonte = MonteCarloCalculator()
+        self.clear()
+        newMonte.setButtonEnable(state: false)
+        // fix bounds of -10,10 for each dim
+        let boxDim = 10.0, n = 100000
+        var plotpts : [CoordTuple] = []
+        let range = stride(from: 0.0, to: 10, by: 0.1)
+        for r in range {
+            await newMonte.monteCarloIntegrate(
+                leftwavefunction: psi1s, rightwavefunction: psi1s,
+                xMin: -boxDim, yMin: -boxDim, zMin: -boxDim, xMax: boxDim, yMax: boxDim, zMax: boxDim,
+                n: n, spacing: r)
+            let tup = (x: r, y: newMonte.integral)
+            plotpts.append(tup)
+        }
     }
     
     func clear() {
