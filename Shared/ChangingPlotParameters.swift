@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import CorePlot
+import CorePlot
 
 class ChangingPlotParameters: NSObject, ObservableObject {
     
@@ -22,4 +22,3 @@ class ChangingPlotParameters: NSObject, ObservableObject {
     var title: String = "Plot Title"
     
 }
-

@@ -10,13 +10,23 @@ import SwiftUI
 @main
 struct Overlap_IntegralsApp: App {
     
+    @StateObject var plotData = PlotClass()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .frame(width: 1000, height: 900)
-                .tabItem {
-                    Text("Basic Image")
-                }
+            TabView {
+                ContentView()
+                    .frame(width: 1000, height: 800)
+                    .tabItem {
+                        Text("Basic Image")
+                    }
+                
+                PlotView()
+                    .environmentObject(plotData)
+                    .tabItem {
+                        Text("Plot")
+                    }
+            }
         }
     }
 }
