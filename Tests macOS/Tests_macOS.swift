@@ -24,19 +24,11 @@ class Tests_macOS: XCTestCase {
     }
     
     // test that monte carlo should do approximately the right thing
-    func test1sIntegral() throws {
-        func analyticInt(x: Double, y: Double, z: Double) -> Double {
-            let r = sqrt(x*x + y*y + z*z)
-            let coeff = exp(-r)
-            let radial = (1.0 + r + r*r/3.0)
-            return coeff * radial
-        }
-        
+    func test1sIntegral() async throws {
         let monteCarlo = MonteCarloCalculator()
-        monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: 0, yMin: 0, zMin: 0, xMax: 1, yMax: 1, zMax: 1, n: 500000, spacing: 0)
-        let analytic = analyticInt(x:1, y:1, z:1) - analyticInt(x: 0, y: 0, z: 0)
+        await monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: 0, yMin: 0, zMin: 0, xMax: 1, yMax: 1, zMax: 1, n: 100000, spacing: 0)
         
-        XCTAssertEqual(analytic, monteCarlo.integral, accuracy: 0.000000001, "expected better from you")
+        XCTAssertEqual(0.05490967852103143, monteCarlo.integral, accuracy: 0.001, "expected better from you")
     }
 
     func testExample() throws {
