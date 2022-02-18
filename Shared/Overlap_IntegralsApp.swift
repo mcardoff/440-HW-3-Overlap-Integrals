@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct Overlap_IntegralsApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(width: 1000, height: 800)
+                .frame(width: 1000, height: 900)
+                .tabItem {
+                    Text("Basic Image")
+                }
         }
     }
 }

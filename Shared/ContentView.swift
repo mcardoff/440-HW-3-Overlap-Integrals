@@ -20,6 +20,8 @@ struct ContentView: View {
     @State var spacingString = "0.0"
     @State var leftFuncString = ""
     @State var rightFuncString = ""
+    @State var plotpts : [CoordTuple] = []
+    @State var empty : [CoordTuple] = []
     var orbitals = ["1s", "2px"]
     
     var body: some View {
@@ -90,7 +92,20 @@ struct ContentView: View {
                         .frame(width: 100)
                 }.padding()
                 
-                Button("Integrate", action: {Task.init{await self.calculate()}})
+                Button("Integrate", action: {
+                    Task.init{
+                        await self.calculate()
+                    }
+                })
+                    .padding()
+                    .frame(width: 150)
+                    .disabled(monteCarlo.enableButton == false)
+                
+                Button("Spacing", action: {
+                    Task.init {
+                        await self.calculateAsFuncOfR()
+                    }
+                })
                     .padding()
                     .frame(width: 150)
                     .disabled(monteCarlo.enableButton == false)
@@ -98,12 +113,29 @@ struct ContentView: View {
                 Button("Clear", action: self.clear)
                     .padding()
                     .frame(width: 100)
+                
+                if (!monteCarlo.enableButton) {
+                    ProgressView()
+                }
+                
             }
-            // DrawingField
-            drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
-                .padding()
-                .aspectRatio(1, contentMode: .fit)
-                .drawingGroup()
+            TabView {
+                // DrawingField
+                drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
+                    .padding()
+                    .aspectRatio(1, contentMode: .fit)
+                    .drawingGroup()
+                    .tabItem {
+                        Text("Orbital Plot")
+                    }
+                drawingView(redLayer: $plotpts, blueLayer: $empty)
+                    .padding()
+                    .aspectRatio(1, contentMode: .fit)
+                    .drawingGroup()
+                    .tabItem {
+                        Text("vs R Plot")
+                    }
+            }
             // Stop the window shrinking to zero.
             Spacer()
         }
@@ -123,19 +155,19 @@ struct ContentView: View {
         // left func
         if (leftFuncString == "2px") {
             func1 = psi2px
-            print("Changed left func to 2px!")
+//            print("Changed left func to 2px!")
         } else {
             func1 = psi1s
-            print("Changed left func to 1s")
+//            print("Changed left func to 1s")
         }
         
         // right func
         if (rightFuncString == "2px") {
             func2 = psi2px
-            print("Changed right func to 2px!")
+//            print("Changed right func to 2px!")
         } else {
             func2 = psi1s
-            print("Changed right func to 1s!")
+//            print("Changed right func to 1s!")
         }
         
         await monteCarlo.monteCarloIntegrate(
@@ -145,6 +177,38 @@ struct ContentView: View {
         
         monteCarlo.setButtonEnable(state: true)
         
+    }
+    
+    func calculateAsFuncOfR() async {
+        let newMonte = MonteCarloCalculator()
+        self.clear()
+        monteCarlo.setButtonEnable(state: false)
+        newMonte.setButtonEnable(state: false)
+        // fix bounds of -10,10 for each dim
+        let boxDim = 10.0, n = 100000
+        var newPlotPts : [CoordTuple] = []
+        let range = stride(from: 0.0, to: 10, by: 0.1)
+        for r in range {
+            await newMonte.monteCarloIntegrate(
+                leftwavefunction: psi1s, rightwavefunction: psi1s,
+                xMin: -boxDim, yMin: -boxDim, zMin: -boxDim, xMax: boxDim, yMax: boxDim, zMax: boxDim,
+                n: n, spacing: r)
+            let tup = (x: r, y: newMonte.integral)
+            newPlotPts.append(tup)
+        }
+        
+//        for item in newPlotPts {
+//            print("pt: \(item.x), \(item.y)")
+//        }
+        
+        await updatePlotPts(content: newPlotPts)
+        
+        monteCarlo.setButtonEnable(state: true)
+        newMonte.setButtonEnable(state: true)
+    }
+    
+    @MainActor func updatePlotPts(content: [CoordTuple]) async {
+        plotpts.append(contentsOf: content)
     }
     
     func clear() {

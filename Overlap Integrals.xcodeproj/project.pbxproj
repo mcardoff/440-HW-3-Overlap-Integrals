@@ -15,6 +15,7 @@
 		2C045FEA27BF62F500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
 		2C045FEB27BF62F900A53121 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */; };
 		2C045FEC27BF62FC00A53121 /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */; };
+		2C045FF827C0089600A53121 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 2C045FF727C0089600A53121 /* CorePlot */; };
 		2CC34BC627BDDD50002B2B2C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BC527BDDD50002B2B2C /* Tests_iOS.swift */; };
 		2CC34BC827BDDD50002B2B2C /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BC727BDDD50002B2B2C /* Tests_iOSLaunchTests.swift */; };
 		2CC34BD227BDDD50002B2B2C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BD127BDDD50002B2B2C /* Tests_macOS.swift */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C045FF827C0089600A53121 /* CorePlot in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,9 @@
 			dependencies = (
 			);
 			name = "Overlap Integraps (iOS)";
+			packageProductDependencies = (
+				2C045FF727C0089600A53121 /* CorePlot */,
+			);
 			productName = "Overlap Integraps (iOS)";
 			productReference = 2CC34BB427BDDD50002B2B2C /* Overlap Integrals.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 2CC34BA727BDDD4C002B2B2C;
+			packageReferences = (
+				2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */,
+			);
 			productRefGroup = 2CC34BB527BDDD50002B2B2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -739,6 +747,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/core-plot/core-plot";
+			requirement = {
+				branch = "release-2.4";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C045FF727C0089600A53121 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CC34BA827BDDD4C002B2B2C /* Project object */;
 }
