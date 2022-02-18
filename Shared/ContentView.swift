@@ -111,7 +111,11 @@ struct ContentView: View {
                 
             }
             // DrawingField
-            drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
+            drawingView(
+                redLayer1: $monteCarlo.redLayer1, redLayer2: $monteCarlo.redLayer2, redLayer3: $monteCarlo.redLayer3,
+                redLayer4: $monteCarlo.redLayer4, redLayer5: $monteCarlo.redLayer5, redLayer6: $monteCarlo.redLayer6,
+                bluLayer1: $monteCarlo.bluLayer1, bluLayer2: $monteCarlo.bluLayer2, bluLayer3: $monteCarlo.bluLayer3,
+                bluLayer4: $monteCarlo.bluLayer4, bluLayer5: $monteCarlo.bluLayer5, bluLayer6: $monteCarlo.bluLayer6)
                 .padding()
                 .aspectRatio(1, contentMode: .fit)
                 .drawingGroup()

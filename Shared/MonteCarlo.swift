@@ -17,8 +17,18 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     
     @Published var integral = 0.0 // value of calculated integral
     @Published var integralString = "" // value of calculated integral but a string :)
-    @Published var redPoints : [CoordTuple] = []
-    @Published var bluPoints : [CoordTuple] = []
+    @Published var redLayer1 : [CoordTuple] = []
+    @Published var redLayer2 : [CoordTuple] = []
+    @Published var redLayer3 : [CoordTuple] = []
+    @Published var redLayer4 : [CoordTuple] = []
+    @Published var redLayer5 : [CoordTuple] = []
+    @Published var redLayer6 : [CoordTuple] = []
+    @Published var bluLayer1 : [CoordTuple] = []
+    @Published var bluLayer2 : [CoordTuple] = []
+    @Published var bluLayer3 : [CoordTuple] = []
+    @Published var bluLayer4 : [CoordTuple] = []
+    @Published var bluLayer5 : [CoordTuple] = []
+    @Published var bluLayer6 : [CoordTuple] = []
     @Published var plotPoints : [plotDataType] = []
     @Published var enableButton = true
     //    @Published var normalized = false
@@ -39,8 +49,10 @@ class MonteCarloCalculator: NSObject, ObservableObject {
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
                              xMin: Double, yMin: Double, zMin: Double, xMax: Double, yMax: Double, zMax: Double,
                              n: Int, spacing: Double ) async {
-        var tempRedPoints : [CoordTuple] = []
-        var tempBluPoints : [CoordTuple] = []
+        var tempRLayer1 : [CoordTuple] = [], tempRLayer2 : [CoordTuple] = [], tempRLayer3 : [CoordTuple] = [],
+            tempRLayer4 : [CoordTuple] = [], tempRLayer5 : [CoordTuple] = [], tempRLayer6 : [CoordTuple] = []
+        var tempBLayer1 : [CoordTuple] = [], tempBLayer2 : [CoordTuple] = [], tempBLayer3 : [CoordTuple] = [],
+            tempBLayer4 : [CoordTuple] = [], tempBLayer5 : [CoordTuple] = [], tempBLayer6 : [CoordTuple] = []
         var LHV = 0.0, RHV = 0.0
         var funVals : [Double] = []
         let offset = spacing
@@ -61,12 +73,37 @@ class MonteCarloCalculator: NSObject, ObservableObject {
             let prod = LHV * RHV
             
             funVals.append(prod)
+            print(prod)
             let tuple = (x: xCur, y: yCur)
-            if(tempRedPoints.count + tempBluPoints.count < 50000) {
-                if(prod < 0.0) { // negative is blue
-                    tempBluPoints.append(tuple)
+            if(funVals.count < 100000) {
+                if(prod >= 0.0) {
+                    if(prod < 1e-6) {
+                        tempRLayer6.append(tuple)
+                    } else if(prod < 1e-5) {
+                        tempRLayer5.append(tuple)
+                    } else if(prod < 1e-4) {
+                        tempRLayer4.append(tuple)
+                    } else if(prod < 1e-3) {
+                        tempRLayer3.append(tuple)
+                    } else if(prod < 1e-2) {
+                        tempRLayer2.append(tuple)
+                    } else if(prod < 1e-1) {
+                        tempRLayer1.append(tuple)
+                    }
                 } else {
-                    tempRedPoints.append(tuple)
+                    if(prod < -1e-6) {
+                        tempBLayer6.append(tuple)
+                    } else if(prod < -1e-5) {
+                        tempBLayer5.append(tuple)
+                    } else if(prod < -1e-4) {
+                        tempBLayer4.append(tuple)
+                    } else if(prod < -1e-3) {
+                        tempBLayer3.append(tuple)
+                    } else if(prod < -1e-2) {
+                        tempBLayer2.append(tuple)
+                    } else if(prod < -1e-1) {
+                        tempBLayer1.append(tuple)
+                    }
                 }
             }
             
@@ -77,7 +114,10 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         let vol = await BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
         let avg = await calculateAverage(data: funVals)
-        await updatePoints(blu: tempBluPoints, red: tempRedPoints)
+        await updateRLayers(l1: tempRLayer1, l2: tempRLayer2, l3: tempRLayer3,
+                           l4: tempRLayer4, l5: tempRLayer5, l6: tempRLayer6)
+        await updateBLayers(l1: tempBLayer1, l2: tempBLayer2, l3: tempBLayer3,
+                           l4: tempBLayer4, l5: tempBLayer5, l6: tempBLayer6)
         await updateIntegral(val: avg * vol)
         await updateIntegralString(text: String(self.integral))
     }
@@ -110,16 +150,29 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     ///
     /// Updates class variables from main thread
     ///
-    @MainActor func updatePoints(blu: [CoordTuple], red: [CoordTuple]) {
-        bluPoints.append(contentsOf: blu)
-        redPoints.append(contentsOf: red)
+    @MainActor func updateRLayers(l1: [CoordTuple], l2: [CoordTuple], l3: [CoordTuple],
+                                  l4: [CoordTuple], l5: [CoordTuple], l6: [CoordTuple]) {
+        redLayer1.append(contentsOf: l1)
+        redLayer2.append(contentsOf: l2)
+        redLayer3.append(contentsOf: l3)
+        redLayer4.append(contentsOf: l4)
+        redLayer5.append(contentsOf: l5)
+        redLayer6.append(contentsOf: l6)
     }
+    
+    @MainActor func updateBLayers(l1: [CoordTuple], l2: [CoordTuple], l3: [CoordTuple],
+                                  l4: [CoordTuple], l5: [CoordTuple], l6: [CoordTuple]) {
+        bluLayer1.append(contentsOf: l1)
+        bluLayer2.append(contentsOf: l2)
+        bluLayer3.append(contentsOf: l3)
+        bluLayer4.append(contentsOf: l4)
+        bluLayer5.append(contentsOf: l5)
+        bluLayer6.append(contentsOf: l6)
+    }
+    
     
     @MainActor func updatePlotPts(content: [plotDataType]) async {
         plotPoints.append(contentsOf: content)
-        for item in plotPoints {
-            print(item)
-        }
     }
     
     /// updateIntegral
@@ -171,8 +224,12 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     ///
     /// Removes points in class variables to clear the plot on screen
     func clearData() {
-        bluPoints.removeAll()
-        redPoints.removeAll()
+        redLayer1.removeAll()
+        redLayer2.removeAll()
+        redLayer3.removeAll()
+        redLayer4.removeAll()
+        redLayer5.removeAll()
+        redLayer6.removeAll()
     }
     
     /// setButton Enable
@@ -197,37 +254,37 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     
     
     // used temporarily to attempt to get a good looking plot, but I realized that kind of was the wrong idea
-    func normalizePts() {
-        var maxX : Double = -Double.greatestFiniteMagnitude // effectively -infinity
-        var maxY : Double = -Double.greatestFiniteMagnitude // effectively -infinity
-        var newRedList : [CoordTuple] = []
-        var newBluList : [CoordTuple] = []
-        let combinedList = redPoints + bluPoints
-        
-        for tup in combinedList { // finds max of entire thing
-            // maxes
-            if tup.x > maxX {
-                maxX = tup.x
-            }
-            
-            if tup.y > maxY {
-                maxY = tup.y
-            }
-        }
-        
-        let globalMax = max(maxX, maxY)
-        // found maximum and minimum x and y, now we can reduce to a max of 1
-        for tup in redPoints {
-            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
-            newRedList.append(newTup)
-        }
-        
-        for tup in bluPoints {
-            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
-            newBluList.append(newTup)
-        }
-        
-        redPoints = newRedList
-        bluPoints = newBluList
-    }
+//    func normalizePts() {
+//        var maxX : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+//        var maxY : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+//        var newRedList : [CoordTuple] = []
+//        var newBluList : [CoordTuple] = []
+//        let combinedList = redPoints + bluPoints
+//        
+//        for tup in combinedList { // finds max of entire thing
+//            // maxes
+//            if tup.x > maxX {
+//                maxX = tup.x
+//            }
+//            
+//            if tup.y > maxY {
+//                maxY = tup.y
+//            }
+//        }
+//        
+//        let globalMax = max(maxX, maxY)
+//        // found maximum and minimum x and y, now we can reduce to a max of 1
+//        for tup in redPoints {
+//            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
+//            newRedList.append(newTup)
+//        }
+//        
+//        for tup in bluPoints {
+//            let newTup = (x: tup.x / globalMax, y: tup.y / globalMax)
+//            newBluList.append(newTup)
+//        }
+//        
+//        redPoints = newRedList
+//        bluPoints = newBluList
+//    }
 }
