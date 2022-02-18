@@ -125,10 +125,16 @@ struct ContentView: View {
                     .padding()
                     .aspectRatio(1, contentMode: .fit)
                     .drawingGroup()
-                drawingView(redLayer: $monteCarlo.bluPoints, blueLayer: $empty)
+                    .tabItem {
+                        Text("Orbital Plot")
+                    }
+                drawingView(redLayer: $plotpts, blueLayer: $empty)
                     .padding()
                     .aspectRatio(1, contentMode: .fit)
                     .drawingGroup()
+                    .tabItem {
+                        Text("vs R Plot")
+                    }
             }
             // Stop the window shrinking to zero.
             Spacer()
