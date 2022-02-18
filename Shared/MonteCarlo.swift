@@ -24,7 +24,9 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
                              xMin: Double, yMin: Double, zMin: Double, xMax: Double, yMax: Double, zMax: Double,
-                             n: Int, spacing: Double ) {
+                             n: Int, spacing: Double ) async {
+        var tempRedPoints : [CoordTuple] = []
+        var tempBluPoints : [CoordTuple] = []
         var LHV = 0.0, RHV = 0.0
         var funVals : [Double] = []
         let offset = spacing
@@ -46,10 +48,12 @@ class MonteCarloCalculator: NSObject, ObservableObject {
             
             funVals.append(prod)
             let tuple = (x: xCur, y: yCur)
-            if(prod < 0.0) { // negative is blue
-                bluPoints.append(tuple)
-            } else {
-                redPoints.append(tuple)
+            if(tempRedPoints.count + tempBluPoints.count < 50000) {
+                if(prod < 0.0) { // negative is blue
+                    tempBluPoints.append(tuple)
+                } else {
+                    tempRedPoints.append(tuple)
+                }
             }
             
         }
@@ -61,21 +65,27 @@ class MonteCarloCalculator: NSObject, ObservableObject {
 //            normalized = true
 //        }
         
-        let vol = BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
-        let avg = calculateAverage(data: funVals)
-        updateIntegral(val: avg * vol)
-        updateIntegralString(text: String(self.integral))
+        let vol = await BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
+        let avg = await calculateAverage(data: funVals)
+        await updatePoints(blu: tempBluPoints, red: tempRedPoints)
+        await updateIntegral(val: avg * vol)
+        await updateIntegralString(text: String(self.integral))
     }
     
-    func updateIntegral(val: Double) {
+    @MainActor func updatePoints(blu: [CoordTuple], red: [CoordTuple]) {
+        bluPoints.append(contentsOf: blu)
+        redPoints.append(contentsOf: red)
+    }
+    
+    @MainActor func updateIntegral(val: Double) async {
         self.integral = val
     }
     
-    func updateIntegralString(text: String) {
+    @MainActor func updateIntegralString(text: String) async {
         self.integralString = text
     }
     
-    func calculateAverage(data: [Double]) -> Double {
+    func calculateAverage(data: [Double]) async -> Double {
         var sum = 0.0
         for num in data {
             sum += num
@@ -131,5 +141,25 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     func clearData() {
         bluPoints.removeAll()
         redPoints.removeAll()
+    }
+    
+    /// setButton Enable
+    /// Toggles the state of the Enable Button on the Main Thread
+    /// - Parameter state: Boolean describing whether the button should be enabled.
+    @MainActor func setButtonEnable(state: Bool){
+        if state {
+            Task.init {
+                await MainActor.run {
+                    self.enableButton = true
+                }
+            }
+        }
+        else{
+            Task.init {
+                await MainActor.run {
+                    self.enableButton = false
+                }
+            }
+        }
     }
 }
