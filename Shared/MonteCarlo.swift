@@ -21,6 +21,18 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     @Published var enableButton = true
     //    @Published var normalized = false
     
+    
+    /// monteCarloIntegrate
+    ///
+    /// updates class with data by performing a monte carlo simulation
+    ///
+    /// - Parameters:
+    ///    -  leftWavefunction: Function that is on the "left" side of the overlap
+    ///    - rightWavefunction: Function on the "right" side of the overlap
+    ///    - iMin: minimum for 'i' dimension, i = x,y,z
+    ///    - iMax: maximum for 'i' dimension, i = x,y,z
+    ///    - n: Number of points to use in the Monte Carlo simulation
+    ///    - spacing: Interatomic spacing R
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
                              xMin: Double, yMin: Double, zMin: Double, xMax: Double, yMax: Double, zMax: Double,
@@ -72,19 +84,36 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         await updateIntegralString(text: String(self.integral))
     }
     
+    /// updatePoints
+    ///
+    /// Updates class variables from main thread
+    ///
     @MainActor func updatePoints(blu: [CoordTuple], red: [CoordTuple]) {
         bluPoints.append(contentsOf: blu)
         redPoints.append(contentsOf: red)
     }
     
+    /// updateIntegral
+    ///
+    /// Updates class variables from main thread
+    ///
     @MainActor func updateIntegral(val: Double) async {
         self.integral = val
     }
     
+    /// updateIntegralString
+    ///
+    /// Updates class variables from main thread
+    ///
     @MainActor func updateIntegralString(text: String) async {
         self.integralString = text
     }
     
+    /// calculateAverage
+    ///
+    /// Finds the average of the elements in a list, using the fact that we have asserted that the number of items in the list is same as number of points
+    ///
+    /// - Parameter data: The data to average
     func calculateAverage(data: [Double]) async -> Double {
         var sum = 0.0
         for num in data {
@@ -93,6 +122,13 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         return sum / Double(data.count)
     }
     
+    /// calculateAverage
+    ///
+    /// Finds the average of the elements in a list, using the fact that we have asserted that the number of items in the list is same as number of points
+    ///
+    /// - Parameters:
+    ///    - data: The data to sum over
+    ///    - nPts: Factor to divide over
     func calculateAverage(data: [Double], nPts: Int) -> Double {
         var sum = 0.0
         for num in data {
@@ -100,6 +136,34 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         }
         let avg = sum / Double(nPts)
         return avg
+    }
+    
+    /// clearData
+    ///
+    /// Removes points in class variables to clear the plot on screen
+    func clearData() {
+        bluPoints.removeAll()
+        redPoints.removeAll()
+    }
+    
+    /// setButton Enable
+    /// Toggles the state of the Enable Button on the Main Thread
+    /// - Parameter state: Boolean describing whether the button should be enabled.
+    @MainActor func setButtonEnable(state: Bool){
+        if state {
+            Task.init {
+                await MainActor.run {
+                    self.enableButton = true
+                }
+            }
+        }
+        else{
+            Task.init {
+                await MainActor.run {
+                    self.enableButton = false
+                }
+            }
+        }
     }
     
     
@@ -136,30 +200,5 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         redPoints = newRedList
         bluPoints = newBluList
-    }
-    
-    func clearData() {
-        bluPoints.removeAll()
-        redPoints.removeAll()
-    }
-    
-    /// setButton Enable
-    /// Toggles the state of the Enable Button on the Main Thread
-    /// - Parameter state: Boolean describing whether the button should be enabled.
-    @MainActor func setButtonEnable(state: Bool){
-        if state {
-            Task.init {
-                await MainActor.run {
-                    self.enableButton = true
-                }
-            }
-        }
-        else{
-            Task.init {
-                await MainActor.run {
-                    self.enableButton = false
-                }
-            }
-        }
     }
 }
