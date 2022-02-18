@@ -34,10 +34,9 @@ struct drawIntegral: Shape {
     var drawingPoints: [(x: Double, y: Double)]  ///Array of tuples
     
     func path(in rect: CGRect) -> Path {
-        // draw from the center of our rectangle
         
         let center = CGPoint(x: 0, y: rect.height)
-        let scale = 1
+        let scale = rect.width / 5
         
         // Create the Path for the display
         var path = Path()

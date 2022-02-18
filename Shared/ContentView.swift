@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var monteCarlo = MonteCarloCalculator()
-    @State var nString = "10000"
+    @State var nString = "100000"
     @State var xMinString = "-5.0"
     @State var yMinString = "-5.0"
     @State var zMinString = "-5.0"
@@ -93,13 +93,14 @@ struct ContentView: View {
                 Button("Integrate", action: self.calculate)
                     .padding()
                     .frame(width: 150)
+                    .disabled(monteCarlo.enableButton == false)
                 
                 Button("Clear", action: self.clear)
                     .padding()
                     .frame(width: 100)
             }
             // DrawingField
-            drawingView(redLayer:$monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
+            drawingView(redLayer: $monteCarlo.redPoints, blueLayer: $monteCarlo.bluPoints)
                 .padding()
                 .aspectRatio(1, contentMode: .fit)
                 .drawingGroup()

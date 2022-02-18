@@ -18,7 +18,8 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     @Published var integralString = "" // value of calculated integral but a string :)
     @Published var redPoints : [CoordTuple] = []
     @Published var bluPoints : [CoordTuple] = []
-//    @Published var normalized = false
+    @Published var enableButton = true
+    //    @Published var normalized = false
     
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
@@ -29,12 +30,18 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         let offset = spacing
         for _ in 1...n { // n random points
             
-            let xCur = Double.random(in: xMin...xMax)
-            let yCur = Double.random(in: yMin...yMax)
+            var xCur = Double.random(in: xMin...xMax)
+            var yCur = Double.random(in: yMin...yMax)
             let zCur = Double.random(in: zMin...zMax)
             
-            LHV = leftwavefunction(xCur - offset, yCur, zCur) // left is at x - R
-            RHV = rightwavefunction(xCur + offset, yCur, zCur) // right is at x + R
+            // ensure no undefined behavior for phi
+            if xCur == 0 && yCur == 0.0 {
+                xCur = 0.00001
+                yCur = 0.00001
+            }
+            
+            LHV = leftwavefunction(xCur - (offset/2), yCur, zCur) // left is at x - R
+            RHV = rightwavefunction(xCur + (offset/2), yCur, zCur) // right is at x + R
             let prod = LHV * RHV
             
             funVals.append(prod)
@@ -56,8 +63,16 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         let vol = BoundingBox.volumeFromCoords(x1: xMin, x2: xMax, y1: yMin, y2: yMax, z1: zMin, z2: zMax)
         let avg = calculateAverage(data: funVals)
-        integral = avg * vol
-        integralString = String(integral)
+        updateIntegral(val: avg * vol)
+        updateIntegralString(text: String(self.integral))
+    }
+    
+    func updateIntegral(val: Double) {
+        self.integral = val
+    }
+    
+    func updateIntegralString(text: String) {
+        self.integralString = text
     }
     
     func calculateAverage(data: [Double]) -> Double {
@@ -111,8 +126,6 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         
         redPoints = newRedList
         bluPoints = newBluList
-        
-        
     }
     
     func clearData() {

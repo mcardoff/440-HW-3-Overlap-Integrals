@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2C045FE527BF426500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
 		2C045FE627BF426500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
+		2C045FE727BF62EB00A53121 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF527BDF747002B2B2C /* BoundingBox.swift */; };
+		2C045FE827BF62EE00A53121 /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF227BDF72E002B2B2C /* MonteCarlo.swift */; };
+		2C045FE927BF62F100A53121 /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BE927BDDF09002B2B2C /* Wavefunctions.swift */; };
+		2C045FEA27BF62F500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
+		2C045FEB27BF62F900A53121 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAE27BDDD4D002B2B2C /* ContentView.swift */; };
+		2C045FEC27BF62FC00A53121 /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BAD27BDDD4D002B2B2C /* Overlap_IntegralsApp.swift */; };
 		2CC34BC627BDDD50002B2B2C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BC527BDDD50002B2B2C /* Tests_iOS.swift */; };
 		2CC34BC827BDDD50002B2B2C /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BC727BDDD50002B2B2C /* Tests_iOSLaunchTests.swift */; };
 		2CC34BD227BDDD50002B2B2C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BD127BDDD50002B2B2C /* Tests_macOS.swift */; };
@@ -350,8 +356,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C045FE927BF62F100A53121 /* Wavefunctions.swift in Sources */,
+				2C045FE727BF62EB00A53121 /* BoundingBox.swift in Sources */,
+				2C045FEB27BF62F900A53121 /* ContentView.swift in Sources */,
 				2CC34BD427BDDD50002B2B2C /* Tests_macOSLaunchTests.swift in Sources */,
+				2C045FEA27BF62F500A53121 /* DrawingView.swift in Sources */,
 				2CC34BD227BDDD50002B2B2C /* Tests_macOS.swift in Sources */,
+				2C045FE827BF62EE00A53121 /* MonteCarlo.swift in Sources */,
+				2C045FEC27BF62FC00A53121 /* Overlap_IntegralsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
