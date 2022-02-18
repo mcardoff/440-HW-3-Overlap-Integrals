@@ -8,12 +8,16 @@
 import Foundation
 import SwiftUI
 
-// General concept of a
+// use the average value theorem to compute the value of the overlap integral of two wavefunctions
+
+typealias CoordTuple = (x: Double, y: Double)
 
 class MonteCarloCalculator: NSObject, ObservableObject {
     
     @Published var integral = 0.0 // value of calculated integral
     @Published var integralString = "" // value of calculated integral but a string :)
+    @Published var redPoints : [CoordTuple] = []
+    @Published var bluPoints : [CoordTuple] = []
     
     func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
                              rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
@@ -29,9 +33,17 @@ class MonteCarloCalculator: NSObject, ObservableObject {
             let zCur = Double.random(in: zMin...zMax)
             
             LHV = leftwavefunction(xCur - offset, yCur, zCur) // left is at x - R
-            RHV = leftwavefunction(xCur + offset, yCur, zCur) // right is at x + R
+            RHV = rightwavefunction(xCur + offset, yCur, zCur) // right is at x + R
+            let prod = LHV * RHV
             
-            funVals.append(LHV * RHV)
+            funVals.append(prod)
+            let tuple = (x: xCur, y: yCur)
+            if(prod < 0.0) { // negative is blue
+                bluPoints.append(tuple)
+            } else {
+                redPoints.append(tuple)
+            }
+            
         }
         
         // silly little test
@@ -58,5 +70,10 @@ class MonteCarloCalculator: NSObject, ObservableObject {
         }
         let avg = sum / Double(nPts)
         return avg
+    }
+    
+    func clearData() {
+        bluPoints.removeAll()
+        redPoints.removeAll()
     }
 }

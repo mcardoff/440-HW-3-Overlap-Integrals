@@ -28,20 +28,6 @@ struct drawingView: View {
     }
 }
 
-struct DrawingView_Previews: PreviewProvider {
-    
-    @State static var redLayer : [(x: Double, y: Double)]  = [(0, 0), (0, 1), (1, 1), (1, 0)]
-    @State static var blueLayer : [(x: Double, y: Double)] = [(0, 0), (0, 1), (1, 1), (1, 0)]
-    
-    static var previews: some View {
-        drawingView(redLayer: $redLayer, blueLayer: $blueLayer)
-            .aspectRatio(1, contentMode: .fill)
-        //.drawingGroup()
-        
-    }
-}
-
-
 
 struct drawIntegral: Shape {
     let smoothness : CGFloat = 1.0
@@ -49,8 +35,10 @@ struct drawIntegral: Shape {
     
     func path(in rect: CGRect) -> Path {
         // draw from the center of our rectangle
+        
+        //normalizePts()
         let center = CGPoint(x: 0, y: rect.height)
-        let scale = rect.width
+        let scale = rect.width/10
         
         // Create the Path for the display
         var path = Path()
@@ -61,5 +49,15 @@ struct drawIntegral: Shape {
                 width: 1.0 , height: 1.0))
         }
         return (path)
+    }
+    
+    func normalizePts() {
+        var maxX : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+        var maxY : Double = -Double.greatestFiniteMagnitude // effectively -infinity
+        for tup in drawingPoints {
+            if tup.x > maxX {
+                maxX = tup.x
+            }
+        }
     }
 }
