@@ -16,10 +16,13 @@ struct Overlap_IntegralsApp: App {
         WindowGroup {
             ContentView()
                 .frame(width: 1000, height: 800)
+                .tabItem {
+                    Text("Basic Image")
+                }
+//            drawingView(redLayer: <#T##Binding<[(x: Double, y: Double)]>#>, blueLayer: <#T##Binding<[(x: Double, y: Double)]>#>)
 //                .tabItem {
-//                    Text("Basic Image")
+//                    Text("Plot")
 //                }
-//            PlotView
         }
     }
 }

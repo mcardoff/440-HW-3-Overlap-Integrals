@@ -36,7 +36,7 @@ struct drawIntegral: Shape {
     func path(in rect: CGRect) -> Path {
         
         let center = CGPoint(x: 0, y: rect.height)
-        let scale = rect.width / 5
+        let scale = rect.width 
         
         // Create the Path for the display
         var path = Path()
