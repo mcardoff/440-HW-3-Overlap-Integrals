@@ -12,6 +12,7 @@ import SwiftUI
 // use the average value theorem to compute the value of the overlap integral of two wavefunctions
 
 typealias CoordTuple = (x: Double, y: Double)
+typealias CartFunc = (_ : Double, _ : Double, _ : Double) -> Double
 
 class MonteCarloCalculator: NSObject, ObservableObject {
     
@@ -45,8 +46,8 @@ class MonteCarloCalculator: NSObject, ObservableObject {
     ///    - iMax: maximum for 'i' dimension, i = x,y,z
     ///    - n: Number of points to use in the Monte Carlo simulation
     ///    - spacing: Interatomic spacing R
-    func monteCarloIntegrate(leftwavefunction:  (_ : Double, _ : Double, _ : Double) -> Double,
-                             rightwavefunction: (_ : Double, _ : Double, _ : Double) -> Double,
+    func monteCarloIntegrate(leftwavefunction: CartFunc,
+                             rightwavefunction: CartFunc,
                              xMin: Double, yMin: Double, zMin: Double, xMax: Double, yMax: Double, zMax: Double,
                              n: Int, spacing: Double ) async {
         var tempRLayer1 : [CoordTuple] = [], tempRLayer2 : [CoordTuple] = [], tempRLayer3 : [CoordTuple] = [],
