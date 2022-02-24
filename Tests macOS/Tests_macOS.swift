@@ -24,13 +24,15 @@ class Tests_macOS: XCTestCase {
     }
     
     // test that monte carlo should do approximately the right thing
-    func test1sIntegral() async throws {
-        let monteCarlo = MonteCarloCalculator()
-        await monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: 0, yMin: 0, zMin: 0, xMax: 1, yMax: 1, zMax: 1, n: 100000, spacing: 0)
-        
-        XCTAssertEqual(0.05490967852103143, monteCarlo.integral, accuracy: 0.001, "expected better from you")
-    }
+//    func test1sIntegral() async throws {
+//        let monteCarlo = MonteCarloCalculator()
+//        await monteCarlo.monteCarloIntegrate(leftwavefunction: psi1s, rightwavefunction: psi1s, xMin: 0, yMin: 0, zMin: 0, xMax: 1, yMax: 1, zMax: 1, n: 100000, spacing: 0)
+//
+//        XCTAssertEqual(0.05490967852103143, monteCarlo.integral, accuracy: 0.001, "expected better from you")
+//    }
 
+    
+    
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
