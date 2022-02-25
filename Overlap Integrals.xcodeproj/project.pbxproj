@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		2C045FE527BF426500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
 		2C045FE627BF426500A53121 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C045FE427BF426500A53121 /* DrawingView.swift */; };
 		2C045FE727BF62EB00A53121 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC34BF527BDF747002B2B2C /* BoundingBox.swift */; };
@@ -162,12 +163,142 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+=======
+		A568546927C744F200CD49B6 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568546827C744F200CD49B6 /* Tests_iOS.swift */; };
+		A568546B27C744F200CD49B6 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568546A27C744F200CD49B6 /* Tests_iOSLaunchTests.swift */; };
+		A568547527C744F200CD49B6 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568547427C744F200CD49B6 /* Tests_macOS.swift */; };
+		A568547727C744F200CD49B6 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568547627C744F200CD49B6 /* Tests_macOSLaunchTests.swift */; };
+		A568547827C744F200CD49B6 /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568545227C744F100CD49B6 /* Overlap_IntegralsApp.swift */; };
+		A568547927C744F200CD49B6 /* Overlap_IntegralsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568545227C744F100CD49B6 /* Overlap_IntegralsApp.swift */; };
+		A568547A27C744F200CD49B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568545327C744F100CD49B6 /* ContentView.swift */; };
+		A568547B27C744F200CD49B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568545327C744F100CD49B6 /* ContentView.swift */; };
+		A568547C27C744F200CD49B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A568545427C744F200CD49B6 /* Assets.xcassets */; };
+		A568547D27C744F200CD49B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A568545427C744F200CD49B6 /* Assets.xcassets */; };
+		A568549627C7456800CD49B6 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548C27C7456700CD49B6 /* PlotView.swift */; };
+		A568549727C7456800CD49B6 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548C27C7456700CD49B6 /* PlotView.swift */; };
+		A568549827C7456800CD49B6 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548C27C7456700CD49B6 /* PlotView.swift */; };
+		A568549927C7456800CD49B6 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548C27C7456700CD49B6 /* PlotView.swift */; };
+		A568549A27C7456800CD49B6 /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548D27C7456800CD49B6 /* CorePlot.swift */; };
+		A568549B27C7456800CD49B6 /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548D27C7456800CD49B6 /* CorePlot.swift */; };
+		A568549C27C7456800CD49B6 /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548D27C7456800CD49B6 /* CorePlot.swift */; };
+		A568549D27C7456800CD49B6 /* CorePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548D27C7456800CD49B6 /* CorePlot.swift */; };
+		A568549E27C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */; };
+		A568549F27C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */; };
+		A56854A027C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */; };
+		A56854A127C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */; };
+		A56854A227C7456800CD49B6 /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548F27C7456800CD49B6 /* PlotClass.swift */; };
+		A56854A327C7456800CD49B6 /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548F27C7456800CD49B6 /* PlotClass.swift */; };
+		A56854A427C7456800CD49B6 /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548F27C7456800CD49B6 /* PlotClass.swift */; };
+		A56854A527C7456800CD49B6 /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568548F27C7456800CD49B6 /* PlotClass.swift */; };
+		A56854A627C7456800CD49B6 /* CalculatePlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549027C7456800CD49B6 /* CalculatePlotData.swift */; };
+		A56854A727C7456800CD49B6 /* CalculatePlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549027C7456800CD49B6 /* CalculatePlotData.swift */; };
+		A56854A827C7456800CD49B6 /* CalculatePlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549027C7456800CD49B6 /* CalculatePlotData.swift */; };
+		A56854A927C7456800CD49B6 /* CalculatePlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549027C7456800CD49B6 /* CalculatePlotData.swift */; };
+		A56854AA27C7456800CD49B6 /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549127C7456800CD49B6 /* MonteCarlo.swift */; };
+		A56854AB27C7456800CD49B6 /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549127C7456800CD49B6 /* MonteCarlo.swift */; };
+		A56854AC27C7456800CD49B6 /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549127C7456800CD49B6 /* MonteCarlo.swift */; };
+		A56854AD27C7456800CD49B6 /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549127C7456800CD49B6 /* MonteCarlo.swift */; };
+		A56854AE27C7456800CD49B6 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549227C7456800CD49B6 /* BoundingBox.swift */; };
+		A56854AF27C7456800CD49B6 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549227C7456800CD49B6 /* BoundingBox.swift */; };
+		A56854B027C7456800CD49B6 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549227C7456800CD49B6 /* BoundingBox.swift */; };
+		A56854B127C7456800CD49B6 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549227C7456800CD49B6 /* BoundingBox.swift */; };
+		A56854B227C7456800CD49B6 /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549327C7456800CD49B6 /* Wavefunctions.swift */; };
+		A56854B327C7456800CD49B6 /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549327C7456800CD49B6 /* Wavefunctions.swift */; };
+		A56854B427C7456800CD49B6 /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549327C7456800CD49B6 /* Wavefunctions.swift */; };
+		A56854B527C7456800CD49B6 /* Wavefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549327C7456800CD49B6 /* Wavefunctions.swift */; };
+		A56854B627C7456800CD49B6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549427C7456800CD49B6 /* DrawingView.swift */; };
+		A56854B727C7456800CD49B6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549427C7456800CD49B6 /* DrawingView.swift */; };
+		A56854B827C7456800CD49B6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549427C7456800CD49B6 /* DrawingView.swift */; };
+		A56854B927C7456800CD49B6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549427C7456800CD49B6 /* DrawingView.swift */; };
+		A56854BA27C7456800CD49B6 /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549527C7456800CD49B6 /* PlotDataClass.swift */; };
+		A56854BB27C7456800CD49B6 /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549527C7456800CD49B6 /* PlotDataClass.swift */; };
+		A56854BC27C7456800CD49B6 /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549527C7456800CD49B6 /* PlotDataClass.swift */; };
+		A56854BD27C7456800CD49B6 /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568549527C7456800CD49B6 /* PlotDataClass.swift */; };
+		A56854C027C7458E00CD49B6 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = A56854BF27C7458E00CD49B6 /* CorePlot */; };
+		A56854C327C745D300CD49B6 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = A56854C227C745D300CD49B6 /* CorePlot */; };
+		A56854C527C745DD00CD49B6 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = A56854C427C745DD00CD49B6 /* CorePlot */; };
+		A56854C727C745E000CD49B6 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = A56854C627C745E000CD49B6 /* CorePlot */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A568546527C744F200CD49B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A568544D27C744F100CD49B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A568545827C744F200CD49B6;
+			remoteInfo = "Overlap Integrals (iOS)";
+		};
+		A568547127C744F200CD49B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A568544D27C744F100CD49B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A568545E27C744F200CD49B6;
+			remoteInfo = "Overlap Integrals (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A568545227C744F100CD49B6 /* Overlap_IntegralsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlap_IntegralsApp.swift; sourceTree = "<group>"; };
+		A568545327C744F100CD49B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A568545427C744F200CD49B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A568545927C744F200CD49B6 /* Overlap Integrals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overlap Integrals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A568545F27C744F200CD49B6 /* Overlap Integrals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overlap Integrals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A568546427C744F200CD49B6 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A568546827C744F200CD49B6 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		A568546A27C744F200CD49B6 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		A568547027C744F200CD49B6 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A568547427C744F200CD49B6 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		A568547627C744F200CD49B6 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		A568548C27C7456700CD49B6 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		A568548D27C7456800CD49B6 /* CorePlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorePlot.swift; sourceTree = "<group>"; };
+		A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPlotParameters.swift; sourceTree = "<group>"; };
+		A568548F27C7456800CD49B6 /* PlotClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotClass.swift; sourceTree = "<group>"; };
+		A568549027C7456800CD49B6 /* CalculatePlotData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatePlotData.swift; sourceTree = "<group>"; };
+		A568549127C7456800CD49B6 /* MonteCarlo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonteCarlo.swift; sourceTree = "<group>"; };
+		A568549227C7456800CD49B6 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		A568549327C7456800CD49B6 /* Wavefunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wavefunctions.swift; sourceTree = "<group>"; };
+		A568549427C7456800CD49B6 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		A568549527C7456800CD49B6 /* PlotDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotDataClass.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A568545627C744F200CD49B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854C027C7458E00CD49B6 /* CorePlot in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568545C27C744F200CD49B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854C327C745D300CD49B6 /* CorePlot in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568546127C744F200CD49B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854C527C745DD00CD49B6 /* CorePlot in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568546D27C744F200CD49B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854C727C745E000CD49B6 /* CorePlot in Frameworks */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		2C04601227C0324E00A53121 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +335,40 @@
 				2C04601527C033BC00A53121 /* CorePlot.swift */,
 				2CC34BF527BDF747002B2B2C /* BoundingBox.swift */,
 				2CC34BAF27BDDD50002B2B2C /* Assets.xcassets */,
+=======
+		A568544C27C744F100CD49B6 = {
+			isa = PBXGroup;
+			children = (
+				A568545127C744F100CD49B6 /* Shared */,
+				A568546727C744F200CD49B6 /* Tests iOS */,
+				A568547327C744F200CD49B6 /* Tests macOS */,
+				A568545A27C744F200CD49B6 /* Products */,
+				A56854C127C745D300CD49B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A568545127C744F100CD49B6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A568545227C744F100CD49B6 /* Overlap_IntegralsApp.swift */,
+				A568545327C744F100CD49B6 /* ContentView.swift */,
+				A568549227C7456800CD49B6 /* BoundingBox.swift */,
+				A568549027C7456800CD49B6 /* CalculatePlotData.swift */,
+				A568548E27C7456800CD49B6 /* ChangingPlotParameters.swift */,
+				A568548D27C7456800CD49B6 /* CorePlot.swift */,
+				A568549427C7456800CD49B6 /* DrawingView.swift */,
+				A568549127C7456800CD49B6 /* MonteCarlo.swift */,
+				A568548F27C7456800CD49B6 /* PlotClass.swift */,
+				A568549527C7456800CD49B6 /* PlotDataClass.swift */,
+				A568548C27C7456700CD49B6 /* PlotView.swift */,
+				A568549327C7456800CD49B6 /* Wavefunctions.swift */,
+				A568545427C744F200CD49B6 /* Assets.xcassets */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		2CC34BB527BDDD50002B2B2C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,10 +376,20 @@
 				2CC34BBA27BDDD50002B2B2C /* Overlap Integraps.app */,
 				2CC34BC127BDDD50002B2B2C /* Tests iOS.xctest */,
 				2CC34BCD27BDDD50002B2B2C /* Tests macOS.xctest */,
+=======
+		A568545A27C744F200CD49B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A568545927C744F200CD49B6 /* Overlap Integrals.app */,
+				A568545F27C744F200CD49B6 /* Overlap Integrals.app */,
+				A568546427C744F200CD49B6 /* Tests iOS.xctest */,
+				A568547027C744F200CD49B6 /* Tests macOS.xctest */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		2CC34BBB27BDDD50002B2B2C /* macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,11 +414,37 @@
 				2CC34BD327BDDD50002B2B2C /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+=======
+		A568546727C744F200CD49B6 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A568546827C744F200CD49B6 /* Tests_iOS.swift */,
+				A568546A27C744F200CD49B6 /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		A568547327C744F200CD49B6 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				A568547427C744F200CD49B6 /* Tests_macOS.swift */,
+				A568547627C744F200CD49B6 /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		A56854C127C745D300CD49B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+<<<<<<< HEAD
 		2CC34BB327BDDD50002B2B2C /* Overlap Integraps (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CC34BDD27BDDD50002B2B2C /* Build configuration list for PBXNativeTarget "Overlap Integraps (iOS)" */;
@@ -257,10 +454,20 @@
 				2CC34BB227BDDD50002B2B2C /* Resources */,
 				2C238C7227C7339900DDF483 /* Embed Frameworks */,
 				2C238C7627C733A000DDF483 /* Embed PlugIns */,
+=======
+		A568545827C744F200CD49B6 /* Overlap Integrals (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A568548027C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Overlap Integrals (iOS)" */;
+			buildPhases = (
+				A568545527C744F200CD49B6 /* Sources */,
+				A568545627C744F200CD49B6 /* Frameworks */,
+				A568545727C744F200CD49B6 /* Resources */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				2C04600E27C0320000A53121 /* PBXTargetDependency */,
 				2C238C7527C733A000DDF483 /* PBXTargetDependency */,
 			);
@@ -279,11 +486,30 @@
 				2CC34BB627BDDD50002B2B2C /* Sources */,
 				2CC34BB727BDDD50002B2B2C /* Frameworks */,
 				2CC34BB827BDDD50002B2B2C /* Resources */,
+=======
+			);
+			name = "Overlap Integrals (iOS)";
+			packageProductDependencies = (
+				A56854BF27C7458E00CD49B6 /* CorePlot */,
+			);
+			productName = "Overlap Integrals (iOS)";
+			productReference = A568545927C744F200CD49B6 /* Overlap Integrals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A568545E27C744F200CD49B6 /* Overlap Integrals (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A568548327C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Overlap Integrals (macOS)" */;
+			buildPhases = (
+				A568545B27C744F200CD49B6 /* Sources */,
+				A568545C27C744F200CD49B6 /* Frameworks */,
+				A568545D27C744F200CD49B6 /* Resources */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+<<<<<<< HEAD
 			name = "Overlap Integraps (macOS)";
 			packageProductDependencies = (
 				2C04601327C0324E00A53121 /* CorePlot */,
@@ -299,10 +525,28 @@
 				2CC34BBD27BDDD50002B2B2C /* Sources */,
 				2CC34BBE27BDDD50002B2B2C /* Frameworks */,
 				2CC34BBF27BDDD50002B2B2C /* Resources */,
+=======
+			name = "Overlap Integrals (macOS)";
+			packageProductDependencies = (
+				A56854C227C745D300CD49B6 /* CorePlot */,
+			);
+			productName = "Overlap Integrals (macOS)";
+			productReference = A568545F27C744F200CD49B6 /* Overlap Integrals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A568546327C744F200CD49B6 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A568548627C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				A568546027C744F200CD49B6 /* Sources */,
+				A568546127C744F200CD49B6 /* Frameworks */,
+				A568546227C744F200CD49B6 /* Resources */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				2CC34BC327BDDD50002B2B2C /* PBXTargetDependency */,
 			);
 			name = "Tests iOS";
@@ -317,20 +561,51 @@
 				2CC34BC927BDDD50002B2B2C /* Sources */,
 				2CC34BCA27BDDD50002B2B2C /* Frameworks */,
 				2CC34BCB27BDDD50002B2B2C /* Resources */,
+=======
+				A568546627C744F200CD49B6 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			packageProductDependencies = (
+				A56854C427C745DD00CD49B6 /* CorePlot */,
+			);
+			productName = "Tests iOS";
+			productReference = A568546427C744F200CD49B6 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A568546F27C744F200CD49B6 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A568548927C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				A568546C27C744F200CD49B6 /* Sources */,
+				A568546D27C744F200CD49B6 /* Frameworks */,
+				A568546E27C744F200CD49B6 /* Resources */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				2CC34BCF27BDDD50002B2B2C /* PBXTargetDependency */,
 			);
 			name = "Tests macOS";
 			productName = "Tests macOS";
 			productReference = 2CC34BCD27BDDD50002B2B2C /* Tests macOS.xctest */;
+=======
+				A568547227C744F200CD49B6 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			packageProductDependencies = (
+				A56854C627C745E000CD49B6 /* CorePlot */,
+			);
+			productName = "Tests macOS";
+			productReference = A568547027C744F200CD49B6 /* Tests macOS.xctest */;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
+<<<<<<< HEAD
 		2CC34BA827BDDD4C002B2B2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
@@ -355,6 +630,32 @@
 				};
 			};
 			buildConfigurationList = 2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integrals" */;
+=======
+		A568544D27C744F100CD49B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					A568545827C744F200CD49B6 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					A568545E27C744F200CD49B6 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					A568546327C744F200CD49B6 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = A568545827C744F200CD49B6;
+					};
+					A568546F27C744F200CD49B6 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = A568545E27C744F200CD49B6;
+					};
+				};
+			};
+			buildConfigurationList = A568545027C744F100CD49B6 /* Build configuration list for PBXProject "Overlap Integrals" */;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -362,6 +663,7 @@
 				en,
 				Base,
 			);
+<<<<<<< HEAD
 			mainGroup = 2CC34BA727BDDD4C002B2B2C;
 			packageReferences = (
 				2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */,
@@ -374,11 +676,26 @@
 				2CC34BB927BDDD50002B2B2C /* Overlap Integraps (macOS) */,
 				2CC34BC027BDDD50002B2B2C /* Tests iOS */,
 				2CC34BCC27BDDD50002B2B2C /* Tests macOS */,
+=======
+			mainGroup = A568544C27C744F100CD49B6;
+			packageReferences = (
+				A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */,
+			);
+			productRefGroup = A568545A27C744F200CD49B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A568545827C744F200CD49B6 /* Overlap Integrals (iOS) */,
+				A568545E27C744F200CD49B6 /* Overlap Integrals (macOS) */,
+				A568546327C744F200CD49B6 /* Tests iOS */,
+				A568546F27C744F200CD49B6 /* Tests macOS */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+<<<<<<< HEAD
 		2CC34BB227BDDD50002B2B2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,13 +713,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2CC34BBF27BDDD50002B2B2C /* Resources */ = {
+=======
+		A568545727C744F200CD49B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A568547C27C744F200CD49B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568545D27C744F200CD49B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A568547D27C744F200CD49B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568546227C744F200CD49B6 /* Resources */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		2CC34BCB27BDDD50002B2B2C /* Resources */ = {
+=======
+		A568546E27C744F200CD49B6 /* Resources */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,6 +752,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		2CC34BB027BDDD50002B2B2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,12 +820,88 @@
 				2C04603527C035C900A53121 /* CalculatePlotData.swift in Sources */,
 				2C045FEC27BF62FC00A53121 /* Overlap_IntegralsApp.swift in Sources */,
 				2C04603127C035BD00A53121 /* ChangingPlotParameters.swift in Sources */,
+=======
+		A568545527C744F200CD49B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854B227C7456800CD49B6 /* Wavefunctions.swift in Sources */,
+				A56854BA27C7456800CD49B6 /* PlotDataClass.swift in Sources */,
+				A568547A27C744F200CD49B6 /* ContentView.swift in Sources */,
+				A568549A27C7456800CD49B6 /* CorePlot.swift in Sources */,
+				A568549E27C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */,
+				A56854AE27C7456800CD49B6 /* BoundingBox.swift in Sources */,
+				A568549627C7456800CD49B6 /* PlotView.swift in Sources */,
+				A56854A627C7456800CD49B6 /* CalculatePlotData.swift in Sources */,
+				A568547827C744F200CD49B6 /* Overlap_IntegralsApp.swift in Sources */,
+				A56854A227C7456800CD49B6 /* PlotClass.swift in Sources */,
+				A56854B627C7456800CD49B6 /* DrawingView.swift in Sources */,
+				A56854AA27C7456800CD49B6 /* MonteCarlo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568545B27C744F200CD49B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854B327C7456800CD49B6 /* Wavefunctions.swift in Sources */,
+				A56854BB27C7456800CD49B6 /* PlotDataClass.swift in Sources */,
+				A568547B27C744F200CD49B6 /* ContentView.swift in Sources */,
+				A568549B27C7456800CD49B6 /* CorePlot.swift in Sources */,
+				A568549F27C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */,
+				A56854AF27C7456800CD49B6 /* BoundingBox.swift in Sources */,
+				A568549727C7456800CD49B6 /* PlotView.swift in Sources */,
+				A56854A727C7456800CD49B6 /* CalculatePlotData.swift in Sources */,
+				A568547927C744F200CD49B6 /* Overlap_IntegralsApp.swift in Sources */,
+				A56854A327C7456800CD49B6 /* PlotClass.swift in Sources */,
+				A56854B727C7456800CD49B6 /* DrawingView.swift in Sources */,
+				A56854AB27C7456800CD49B6 /* MonteCarlo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568546027C744F200CD49B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854B427C7456800CD49B6 /* Wavefunctions.swift in Sources */,
+				A56854BC27C7456800CD49B6 /* PlotDataClass.swift in Sources */,
+				A568546B27C744F200CD49B6 /* Tests_iOSLaunchTests.swift in Sources */,
+				A568549C27C7456800CD49B6 /* CorePlot.swift in Sources */,
+				A56854A027C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */,
+				A56854B027C7456800CD49B6 /* BoundingBox.swift in Sources */,
+				A568549827C7456800CD49B6 /* PlotView.swift in Sources */,
+				A56854A827C7456800CD49B6 /* CalculatePlotData.swift in Sources */,
+				A568546927C744F200CD49B6 /* Tests_iOS.swift in Sources */,
+				A56854A427C7456800CD49B6 /* PlotClass.swift in Sources */,
+				A56854B827C7456800CD49B6 /* DrawingView.swift in Sources */,
+				A56854AC27C7456800CD49B6 /* MonteCarlo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A568546C27C744F200CD49B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56854B527C7456800CD49B6 /* Wavefunctions.swift in Sources */,
+				A56854BD27C7456800CD49B6 /* PlotDataClass.swift in Sources */,
+				A568547727C744F200CD49B6 /* Tests_macOSLaunchTests.swift in Sources */,
+				A568549D27C7456800CD49B6 /* CorePlot.swift in Sources */,
+				A56854A127C7456800CD49B6 /* ChangingPlotParameters.swift in Sources */,
+				A56854B127C7456800CD49B6 /* BoundingBox.swift in Sources */,
+				A568549927C7456800CD49B6 /* PlotView.swift in Sources */,
+				A56854A927C7456800CD49B6 /* CalculatePlotData.swift in Sources */,
+				A568547527C744F200CD49B6 /* Tests_macOS.swift in Sources */,
+				A56854A527C7456800CD49B6 /* PlotClass.swift in Sources */,
+				A56854B927C7456800CD49B6 /* DrawingView.swift in Sources */,
+				A56854AD27C7456800CD49B6 /* MonteCarlo.swift in Sources */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+<<<<<<< HEAD
 		2C04600E27C0320000A53121 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 2C04600D27C0320000A53121 /* CorePlot */;
@@ -503,11 +920,26 @@
 			isa = PBXTargetDependency;
 			target = 2CC34BB927BDDD50002B2B2C /* Overlap Integraps (macOS) */;
 			targetProxy = 2CC34BCE27BDDD50002B2B2C /* PBXContainerItemProxy */;
+=======
+		A568546627C744F200CD49B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A568545827C744F200CD49B6 /* Overlap Integrals (iOS) */;
+			targetProxy = A568546527C744F200CD49B6 /* PBXContainerItemProxy */;
+		};
+		A568547227C744F200CD49B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A568545E27C744F200CD49B6 /* Overlap Integrals (macOS) */;
+			targetProxy = A568547127C744F200CD49B6 /* PBXContainerItemProxy */;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+<<<<<<< HEAD
 		2CC34BDB27BDDD50002B2B2C /* Debug */ = {
+=======
+		A568547E27C744F200CD49B6 /* Debug */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -566,7 +998,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		2CC34BDC27BDDD50002B2B2C /* Release */ = {
+=======
+		A568547F27C744F200CD49B6 /* Release */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -618,7 +1054,11 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		2CC34BDE27BDDD50002B2B2C /* Debug */ = {
+=======
+		A568548127C744F200CD49B6 /* Debug */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -633,13 +1073,21 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Overlap-Integrals";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "Overlap Integrals";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -648,7 +1096,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		2CC34BDF27BDDD50002B2B2C /* Release */ = {
+=======
+		A568548227C744F200CD49B6 /* Release */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -663,13 +1115,21 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Overlap-Integrals";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "Overlap Integrals";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -679,185 +1139,355 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE127BDDD50002B2B2C /* Debug */ = {
+=======
+		A568548427C744F200CD49B6 /* Debug */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+<<<<<<< HEAD
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+=======
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37PA3332DC;
+<<<<<<< HEAD
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+=======
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+<<<<<<< HEAD
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
 				PRODUCT_NAME = "Overlap Integraps";
+=======
+				MACOSX_DEPLOYMENT_TARGET = 12;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Overlap-Integrals";
+				PRODUCT_NAME = "Overlap Integrals";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		2CC34BE227BDDD50002B2B2C /* Release */ = {
+=======
+		A568548527C744F200CD49B6 /* Release */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+<<<<<<< HEAD
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+=======
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37PA3332DC;
+<<<<<<< HEAD
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+=======
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+<<<<<<< HEAD
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Overlap-Integrals";
 				PRODUCT_NAME = "Overlap Integraps";
+=======
+				MACOSX_DEPLOYMENT_TARGET = 12;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Overlap-Integrals";
+				PRODUCT_NAME = "Overlap Integrals";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE427BDDD50002B2B2C /* Debug */ = {
+=======
+		A568548727C744F200CD49B6 /* Debug */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 37PA3332DC;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Tests-iOS";
+=======
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Tests-iOS";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+<<<<<<< HEAD
 				TEST_TARGET_NAME = "Overlap Integraps (iOS)";
 			};
 			name = Debug;
 		};
 		2CC34BE527BDDD50002B2B2C /* Release */ = {
+=======
+				TEST_TARGET_NAME = "Overlap Integrals (iOS)";
+			};
+			name = Debug;
+		};
+		A568548827C744F200CD49B6 /* Release */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 37PA3332DC;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Tests-iOS";
+=======
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Tests-iOS";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+<<<<<<< HEAD
 				TEST_TARGET_NAME = "Overlap Integraps (iOS)";
+=======
+				TEST_TARGET_NAME = "Overlap Integrals (iOS)";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE727BDDD50002B2B2C /* Debug */ = {
+=======
+		A568548A27C744F200CD49B6 /* Debug */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37PA3332DC;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Tests-macOS";
+=======
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37PA3332DC;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Tests-macOS";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+<<<<<<< HEAD
 				TEST_TARGET_NAME = "Overlap Integraps (macOS)";
 			};
 			name = Debug;
 		};
 		2CC34BE827BDDD50002B2B2C /* Release */ = {
+=======
+				TEST_TARGET_NAME = "Overlap Integrals (macOS)";
+			};
+			name = Debug;
+		};
+		A568548B27C744F200CD49B6 /* Release */ = {
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37PA3332DC;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IIT.Tests-macOS";
+=======
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37PA3332DC;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jtIIT.Tests-macOS";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+<<<<<<< HEAD
 				TEST_TARGET_NAME = "Overlap Integraps (macOS)";
+=======
+				TEST_TARGET_NAME = "Overlap Integrals (macOS)";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+<<<<<<< HEAD
 		2CC34BAB27BDDD4C002B2B2C /* Build configuration list for PBXProject "Overlap Integrals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BDB27BDDD50002B2B2C /* Debug */,
 				2CC34BDC27BDDD50002B2B2C /* Release */,
+=======
+		A568545027C744F100CD49B6 /* Build configuration list for PBXProject "Overlap Integrals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A568547E27C744F200CD49B6 /* Debug */,
+				A568547F27C744F200CD49B6 /* Release */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		2CC34BDD27BDDD50002B2B2C /* Build configuration list for PBXNativeTarget "Overlap Integraps (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BDE27BDDD50002B2B2C /* Debug */,
 				2CC34BDF27BDDD50002B2B2C /* Release */,
+=======
+		A568548027C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Overlap Integrals (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A568548127C744F200CD49B6 /* Debug */,
+				A568548227C744F200CD49B6 /* Release */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE027BDDD50002B2B2C /* Build configuration list for PBXNativeTarget "Overlap Integraps (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BE127BDDD50002B2B2C /* Debug */,
 				2CC34BE227BDDD50002B2B2C /* Release */,
+=======
+		A568548327C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Overlap Integrals (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A568548427C744F200CD49B6 /* Debug */,
+				A568548527C744F200CD49B6 /* Release */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE327BDDD50002B2B2C /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BE427BDDD50002B2B2C /* Debug */,
 				2CC34BE527BDDD50002B2B2C /* Release */,
+=======
+		A568548627C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A568548727C744F200CD49B6 /* Debug */,
+				A568548827C744F200CD49B6 /* Release */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		2CC34BE627BDDD50002B2B2C /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC34BE727BDDD50002B2B2C /* Debug */,
 				2CC34BE827BDDD50002B2B2C /* Release */,
+=======
+		A568548927C744F200CD49B6 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A568548A27C744F200CD49B6 /* Debug */,
+				A568548B27C744F200CD49B6 /* Release */,
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -865,9 +1495,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+<<<<<<< HEAD
 		2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/core-plot/core-plot";
+=======
+		A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/core-plot/core-plot";
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			requirement = {
 				branch = "release-2.4";
 				kind = branch;
@@ -876,6 +1512,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+<<<<<<< HEAD
 		2C045FF727C0089600A53121 /* CorePlot */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */;
@@ -889,9 +1526,33 @@
 		2C04601327C0324E00A53121 /* CorePlot */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C045FF627C0089600A53121 /* XCRemoteSwiftPackageReference "core-plot" */;
+=======
+		A56854BF27C7458E00CD49B6 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+		A56854C227C745D300CD49B6 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+		A56854C427C745DD00CD49B6 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+		A56854C627C745E000CD49B6 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56854BE27C7458E00CD49B6 /* XCRemoteSwiftPackageReference "core-plot" */;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 			productName = CorePlot;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
+<<<<<<< HEAD
 	rootObject = 2CC34BA827BDDD4C002B2B2C /* Project object */;
+=======
+	rootObject = A568544D27C744F100CD49B6 /* Project object */;
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 }

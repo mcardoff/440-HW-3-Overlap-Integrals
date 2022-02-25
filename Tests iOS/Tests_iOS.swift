@@ -2,7 +2,11 @@
 //  Tests_iOS.swift
 //  Tests iOS
 //
+<<<<<<< HEAD
 //  Created by Michael Cardiff on 2/16/22.
+=======
+//  Created by Jeff_Terry on 2/23/22.
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 //
 
 import XCTest

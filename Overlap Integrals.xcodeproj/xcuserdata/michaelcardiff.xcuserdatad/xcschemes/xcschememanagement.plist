@@ -4,17 +4,26 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
 		<key>Overlap Integraps (iOS).xcscheme_^#shared#^_</key>
+=======
+		<key>Overlap Integrals (iOS).xcscheme_^#shared#^_</key>
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+<<<<<<< HEAD
 		<key>Overlap Integraps (macOS).xcscheme_^#shared#^_</key>
+=======
+		<key>Overlap Integrals (macOS).xcscheme_^#shared#^_</key>
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
+<<<<<<< HEAD
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>2CC34BB927BDDD50002B2B2C</key>
@@ -28,5 +37,7 @@
 			<true/>
 		</dict>
 	</dict>
+=======
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
 </dict>
 </plist>

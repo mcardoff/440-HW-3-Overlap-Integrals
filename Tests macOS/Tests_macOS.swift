@@ -2,7 +2,7 @@
 //  Tests_macOS.swift
 //  Tests macOS
 //
-//  Created by Michael Cardiff on 2/16/22.
+//  Created by Jeff_Terry on 2/23/22.
 //
 
 import XCTest
@@ -53,7 +53,10 @@ class Tests_macOS: XCTestCase {
         XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 117a72965a5427134661c1a3d81ee6a3a6126a61
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
