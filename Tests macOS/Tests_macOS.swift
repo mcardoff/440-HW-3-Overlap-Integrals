@@ -22,14 +22,6 @@ class Tests_macOS: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    // test that the func returns the right value
-    func test1s() throws {
-        var testval = psi1s(x: 1, y: 0, z: 0)
-        var ans = 0.2075537487102974
-        
-        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
-    }
-    
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -38,6 +30,29 @@ class Tests_macOS: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    // test that the func returns the right value
+    func test1s() throws {
+        //spherical symmetry
+        var testval = psi1s(x: 1, y: 0, z: 0)
+        var ans = 0.2075537487102974
+        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
+        
+        testval = psi1s(x: 0, y: 1, z: 0)
+        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
+        
+        testval = psi1s(x: 0, y: 0, z: 1)
+        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
+        
+        testval = psi1s(x: 1.0/sqrt(3), y: 1.0/sqrt(3), z: 1.0/sqrt(3))
+        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
+        
+        // Value at origin
+        testval = psi1s(x: 0, y: 0, z: 0)
+        ans = 1 / sqrt(Double.pi)
+        XCTAssertEqual(testval, ans, accuracy: 1e-10, "You didnt do good enough")
+    }
+
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
